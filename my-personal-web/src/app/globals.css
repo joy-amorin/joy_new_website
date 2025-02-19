@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Montserrat:wght@300;400;600&display=swap')s;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,5 +20,25 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Asegúrate de que el encabezado con el nombre mantenga Megrim */
+h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat';
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about {
+  scroll-margin-top: 80px;
+}
+#about p {
+  font-size: 1.0rem;
 }
