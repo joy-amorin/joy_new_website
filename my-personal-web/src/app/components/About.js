@@ -3,22 +3,22 @@ import Image from "next/image";
 
 const SectionAbout = () => {
   return (
-    <section id="about" className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
-  <div className="flex flex-col md:flex-row items-start justify-between md:gap-12">
+    <section id="about" className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8 lg:px-16">
+  <div className="flex flex-col md:flex-row items-start justify-between md:gap-6">
     {/* Foto a la izquierda */}
-    <div className="about-image flex-shrink-0 mb-8 md:mb-0 md:w-1/2 mt-16">
+    <div className="about-image flex-shrink-0 mb-8 md:mb-0 md:w-1/2 mt-20">
       <Image
         src="/joy-about.jpg"
         alt="Sobre mí"
-        width={400}
-        height={400}
+        width={500}
+        height={500}
         className="rounded-lg object-cover"
       />
     </div>
 
     {/* Texto a la derecha */}
     <div className="text-center md:text-left md:w-1/2"> 
-        <h2 className="text-4xl font-body mb-4">Investigar y crear</h2>
+        <h2 className="text-4xl font-body mb-4 mt-10">Investigar y crear</h2>
         <p className="text-base md:text-lg leading-relaxed">
             Investigar y crear siempre ha sido mi forma de conectar con la música. Comencé en la adolescencia como 
             autodidacta, tocando instrumentos como la guitarra y la batería. Después de tomar clases, decidí seguir 

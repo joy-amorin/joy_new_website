@@ -16,7 +16,7 @@ const SectionProjects = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Proyecto 1 */}
-        <div className="project-card cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => handleProjectClick('/project1')}>
+        <div className="project-card cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => handleProjectClick('/projects/cuantica')}>
           <Image
             src="/cuantica.jpg"
             alt="Proyecto 1"
