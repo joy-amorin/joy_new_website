@@ -23,11 +23,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Asegúrate de que el encabezado con el nombre mantenga Megrim */
-h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat';
-}
-
 h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
