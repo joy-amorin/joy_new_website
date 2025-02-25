@@ -31,7 +31,7 @@ const SectionProjects = () => {
         </div>
 
         {/* Proyecto 2 */}
-        <div className="project-card cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => handleProjectClick('/project2')}>
+        <div className="project-card cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => handleProjectClick('/projects/el-asilo')}>
           <Image
             src="/el-asilo.png"
             alt="Proyecto 2"
