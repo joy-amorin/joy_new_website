@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Montserrat:wght@300;400;600&display=swap')s;
+/* Importamos la fuente Montserrat desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/* Usamos la fuente Megrim localmente */
+@font-face {
+  font-family: 'Megrim';
+  src: url('/fonts/Megrim-Regular.ttf') format('truetype'); /* Asegúrate de que el archivo esté en public/fonts */
+  font-weight: normal;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
@@ -20,11 +28,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif; /* Mantienes Montserrat para el texto general */
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Megrim', sans-serif; /* Usas Megrim en los títulos */
 }
 
 html {
