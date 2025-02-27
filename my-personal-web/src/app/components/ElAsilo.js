@@ -41,7 +41,7 @@ const SectionCuntica = () => {
             <h3 className="text-2xl mb-4">Escucha el disco Despertar en Spotify</h3>
             <div className="iframe-container-asilo">
               <iframe 
-                style={{ borderRadius: '12px', width: '48%', height: '3oopx' }} 
+                style={{ borderRadius: '12px', width: '48%', height: '400px' }} 
                 src="https://open.spotify.com/embed/album/3smBDwTFUY3LDbQO1aLDT0?utm_source=generator&theme=0" 
                 frameBorder="0" 
                 allowFullScreen 
