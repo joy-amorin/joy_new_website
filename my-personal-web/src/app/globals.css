@@ -1,4 +1,3 @@
-/* Eliminamos el @import ya que usaremos la fuente localmente */
 
 /* Usamos la fuente Megrim localmente */
 @font-face {
@@ -12,7 +11,7 @@
 @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300 600; /* Ajustamos el rango de pesos de la fuente si es variable */
+  font-weight: 300 600;
   font-style: normal;
 }
 
