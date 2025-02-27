@@ -22,7 +22,7 @@ const SectionProjects = () => {
             alt="Proyecto 1"
             width={400}
             height={300}
-            className="rounded-lg object-cover mb-4"
+            className="rounded-lg object-cover mb-4 hover:shadow-[0_4px_10px_#9340ff]"
           />
           <h3 className="text-2xl font-body mb-2"> Cuántica</h3>
           <p className="text-base leading-relaxed">
@@ -37,7 +37,7 @@ const SectionProjects = () => {
             alt="Proyecto 2"
             width={400}
             height={300}
-            className="rounded-lg object-cover mb-4"
+            className="rounded-lg object-cover mb-4 hover:shadow-[0_4px_10px_#9340ff]"
           />
           <h3 className="text-2xl font-body mb-2">El asilo de la bestia</h3>
           <p className="text-base leading-relaxed">

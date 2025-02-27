@@ -38,6 +38,30 @@ const SectionCuntica = () => {
             </p>
         </div>
     </div>
+    {/* Iframes debajo del texto */}
+    <div className="flex flex-col md:flex-row justify-between items-center mt-10 gap-4">
+        <iframe
+          style={{ borderRadius: '12px' }}
+          width="100%"
+          height="352"
+          src="https://open.spotify.com/embed/track/29a5qSI1PmUYGP4hz4WLQ3?utm_source=generator&theme=0"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+
+        <iframe
+          style={{ borderRadius: '12px' }}
+          width="100%"
+          height="352"
+          src="https://www.youtube.com/embed/O2GGx8H9y1o?si=jAw19T88nCqiQtVy"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
 </section>
 
   

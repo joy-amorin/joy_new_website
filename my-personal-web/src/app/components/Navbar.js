@@ -68,6 +68,15 @@ export default function Navbar() {
               Recursos
             </a>
           </li>
+          <li>
+            <a
+              href="/#contacto"
+               className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full"
+              onClick={() => handleNavClick("recursos")}
+            >
+              contacto
+            </a>
+          </li>
         </ul>
 
         {/* Menú desplegable en móviles con animación */}
@@ -82,7 +91,7 @@ export default function Navbar() {
             >
               <li>
                 <a
-                  href="#about"
+                  href="/#about"
                   className="block py-2 hover:text-primary"
                   onClick={() => handleNavClick("about")}
                 >
@@ -91,7 +100,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#proyectos"
+                  href="/#projects"
                   className="block py-2 hover:text-primary"
                   onClick={() => handleNavClick("proyectos")}
                 >
@@ -100,7 +109,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#blog"
+                  href="/#blog"
                   className="block py-2 hover:text-primary"
                   onClick={() => handleNavClick("blog")}
                 >
@@ -109,11 +118,20 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#recursos"
+                  href="/#recursos"
                   className="block py-2 hover:text-primary"
                   onClick={() => handleNavClick("recursos")}
                 >
                   Recursos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#contacto"
+                  className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full block text-center md:inline-block"
+                  onClick={() => handleNavClick("contacto")}
+                >
+                  Contacto
                 </a>
               </li>
             </motion.ul>
