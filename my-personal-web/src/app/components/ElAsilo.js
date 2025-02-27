@@ -36,6 +36,20 @@ const SectionCuntica = () => {
             </p>
         </div>
     </div>
+    {/* Spotify Embed */}
+    <div className="spotify-container mt-8">
+            <h3 className="text-2xl mb-4">Escucha el disco Despertar en Spotify</h3>
+            <div className="iframe-container-asilo">
+              <iframe 
+                style={{ borderRadius: '12px', width: '48%', height: '3oopx' }} 
+                src="https://open.spotify.com/embed/album/3smBDwTFUY3LDbQO1aLDT0?utm_source=generator&theme=0" 
+                frameBorder="0" 
+                allowFullScreen 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
 </section>
 
   
