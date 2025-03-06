@@ -1,15 +1,17 @@
 "use client";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Estado del menú móvil
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Estado del submenú de recursos
 
   // Cierra el menú y realiza el desplazamiento
   const handleNavClick = (id) => {
-    setIsOpen(false); // Cierra el menú
+    setIsOpen(false); // Cierra el menú móvil
+    setIsDropdownOpen(false); // Cierra el submenú de recursos si está abierto
     setTimeout(() => {
       window.location.hash = id; // Cambia la URL y hace el desplazamiento
     }, 300); // Pequeño retraso para que el menú se cierre antes
@@ -23,7 +25,7 @@ export default function Navbar() {
           JA
         </Link>
         {/* Botón de menú en móviles */}
-        <button 
+        <button
           className="md:hidden text-foreground"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -59,22 +61,39 @@ export default function Navbar() {
               Blog
             </a>
           </li>
-          <li>
-            <a
-              href="/#recursos"
-              className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-              onClick={() => handleNavClick("recursos")}
+          {/* Barra desplegable de recursos */}
+          <li className="relative">
+            <button
+              className="relative flex items-center"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
-              Recursos
-            </a>
+              Recursos {isDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </button>
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.ul
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute left-0 mt-2 w-48 bg-background shadow-lg rounded-md"
+                >
+                  <li className="hover:bg-gray-200 px-4 py-2 hover:bg-primary">
+                    <a href="/#ebook1" onClick={() => handleNavClick("ebook1")}>
+                      E-books
+                    </a>
+                  </li>
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </li>
           <li>
             <a
               href="/#contacto"
-               className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full"
-              onClick={() => handleNavClick("recursos")}
+              className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full"
+              onClick={() => handleNavClick("contacto")}
             >
-              contacto
+              Contacto
             </a>
           </li>
         </ul>
@@ -120,11 +139,32 @@ export default function Navbar() {
                 <a
                   href="/#recursos"
                   className="block py-2 hover:text-primary"
-                  onClick={() => handleNavClick("recursos")}
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   Recursos
                 </a>
               </li>
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.ul
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-background text-center space-y-2 py-2"
+                  >
+                    <li>
+                      <a
+                        href="/#ebooks"
+                        className="block py-2 hover:text-primary"
+                        onClick={() => handleNavClick("ebook1")}
+                      >
+                        E-books
+                      </a>
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
               <li>
                 <a
                   href="/#contacto"
