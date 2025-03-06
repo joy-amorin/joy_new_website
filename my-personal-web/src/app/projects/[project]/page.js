@@ -11,7 +11,7 @@ const ProjectPage = () => {
   const [ProjectComponent, setProjectComponent] = useState(null);
 
   useEffect(() => {
-    const projectName = pathname.split('/').pop(); // Obtiene el nombre del proyecto desde la URL
+    const projectName = pathname.split('/').pop(); // Obtener el nombre del proyecto desde la URL
 
     if (projectName === 'cuantica') {
       setProjectComponent(() => Cuantica);

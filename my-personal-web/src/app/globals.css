@@ -1,5 +1,5 @@
 
-/* Usamos la fuente Megrim localmente */
+/* Usar la fuente Megrim localmente */
 @font-face {
   font-family: 'Megrim';
   src: url('/fonts/Megrim-Regular.ttf') format('truetype');
@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-/* Usamos la fuente Montserrat localmente */
+/* Usar la fuente Montserrat localmente */
 @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
