@@ -18,7 +18,7 @@ const BlogDetail = ({ params }) => {
       const environmentId = "master";
       const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
-      // Obtener detalles de la entrada del blog con Contentful
+      // Obtener detalles de la entrada con Contentful
       const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environmentId}/entries/${id}?access_token=${accessToken}`;
       const response = await fetch(url);
       const data = await response.json();
@@ -136,7 +136,7 @@ const BlogDetail = ({ params }) => {
           <p>Loading...</p>
         )}
       </div>
-      <Navbar /> {/* Esto va después, fuera del contenedor del contenido */}
+      <Navbar />
     </>
   );
   

@@ -79,7 +79,7 @@ export default function Navbar() {
                   className="absolute left-0 mt-2 w-48 bg-background shadow-lg rounded-md"
                 >
                   <li className="hover:bg-gray-200 px-4 py-2 hover:bg-primary">
-                    <a href="/#ebook1" onClick={() => handleNavClick("ebook1")}>
+                    <a href="/#ebooks" onClick={() => handleNavClick("ebooks")}>
                       E-books
                     </a>
                   </li>
@@ -157,7 +157,7 @@ export default function Navbar() {
                       <a
                         href="/#ebooks"
                         className="block py-2 hover:text-primary"
-                        onClick={() => handleNavClick("ebook1")}
+                        onClick={() => handleNavClick("ebooks")}
                       >
                         E-books
                       </a>
