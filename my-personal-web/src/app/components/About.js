@@ -1,4 +1,4 @@
-// /src/components/SectionAbout.js
+
 import Image from "next/image";
 
 const SectionAbout = () => {
