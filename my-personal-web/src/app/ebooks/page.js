@@ -43,6 +43,7 @@ const EbookPage = () => {
   return (
     <>
     <div className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
+    <h1 className="text-center text-4xl font-body mt-10 mb-8">Tus e-books gratuitos</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
         {ebooks.map((ebook, index) => (
           <div key={index} className="border rounded-lg p-4 bg-background shadow-md">
