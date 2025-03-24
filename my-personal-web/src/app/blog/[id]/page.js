@@ -41,6 +41,11 @@ const BlogDetail = ({ params }) => {
     fetchEntry();
   }, [id]);
 
+  // función para ver la estructura de los datos
+  const logContentStructure = (content) => {
+    console.log('Estructura del contenido:', JSON.stringify(content, null, 2));
+  };
+
   const options = {
     renderNode: {
       'embedded-asset-block': (node) => {
@@ -57,11 +62,36 @@ const BlogDetail = ({ params }) => {
         );
       },
       'hyperlink': (node) => {
-        return <a href={node.data.uri} className="text-blue-500">{node.content[0].value}</a>;
+        const linkText = node.content.map(content => content.value).join('');
+        return <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-blue-500">{linkText}</a>;
       },
       'paragraph': (node) => {
-        return <p className="mb-4 text-base">{node.content[0].value}</p>;
+        logContentStructure(node); // ver estructura de los nodos del párrafo
+        return (
+          <p className="mb-4 text-base">
+            {node.content.map((content, index) => {
+              if (content.nodeType === 'hyperlink') {
+                // si el nodo es un hipervínculo
+                return (
+                  <a
+                    key={index}
+                    href={content.data.uri}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500"
+                  >
+                    {content.content.map((subContent, subIndex) => subContent.value).join('')}
+                  </a>
+                );
+              } else {
+                  // si no es un hipervínculo mostrar el contenido normal
+                return <span key={index}>{content.value}</span>;
+              }
+            })}
+          </p>
+        );
       },
+
       'heading-1': (node) => {
         return <h1 className="text-4xl font-bold mb-4">{node.content[0].value}</h1>;
       },
@@ -139,7 +169,6 @@ const BlogDetail = ({ params }) => {
       <Navbar />
     </>
   );
-  
 };
 
 export default BlogDetail;
