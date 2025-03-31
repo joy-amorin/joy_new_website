@@ -27,11 +27,14 @@ Este repositorio contiene el código fuente de mi web personal, donde comparto m
 npm install
 
 3- Crear un archivo .env.local y añadir tus credenciales de Contentful y otras variables de entorno:
+
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=tu_space_id
+
 NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=tu_access_token
 
 
 4-Iniciar el servidor de desarrollo:
+
 npm run dev
 
 
