@@ -31,8 +31,11 @@ npm install
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=tu_space_id
 NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=tu_access_token
 
+
 4-Iniciar el servidor de desarrollo:
+
 npm run dev
+
 Visitar la web en http://localhost:3000.
 
 ## Configuración de Cloudflare con R2
