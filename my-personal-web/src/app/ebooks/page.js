@@ -2,36 +2,29 @@
 
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import NewsletterForm from '../components/NewsletterForm';
 
-const EbookPage = () => {
-  const [ebooks, setEbooks] = useState([]);
+const EbookLanding = () => {
+  const [ebook, setEbook] = useState(null);
 
   useEffect(() => {
     const fetchEbooks = async () => {
       try {
         const response = await fetch('https://web-resources.joy-resources.workers.dev/ebooks');
-
-        if (!response.ok) {
-          throw new Error(`Error fetching eBooks: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
 
         const data = await response.json();
-        console.log("Fetched eBooks:", data);
-
-        const filteredEbooks = data.filter(ebook => ebook.name.endsWith('.pdf'));
-
-        const ebooksWithImage = filteredEbooks.map(ebook => {
-          const imageUrl = ebook.name.replace('.pdf', '.jpg');
-          return {
-            ...ebook,
-            imageUrl: `https://web-resources.joy-resources.workers.dev/ebooks/${imageUrl}`,
-            downloadUrl: `https://web-resources.joy-resources.workers.dev/ebooks/${ebook.name}`
-          };
-        });
-
-        setEbooks(ebooksWithImage);
+        const filtered = data.filter(e => e.name.endsWith('.pdf'));
+        if (filtered.length > 0) {
+          const first = filtered[0];
+          setEbook({
+            title: first.name.replace('.pdf', '').replace(/-/g, ' '),
+            imageUrl: `https://web-resources.joy-resources.workers.dev/ebooks/${first.name.replace('.pdf', '.jpg')}`,
+            downloadUrl: `https://web-resources.joy-resources.workers.dev/ebooks/${first.name}`
+          });
+        }
       } catch (error) {
-        console.error("Error fetching eBooks:", error);
+        console.error("Error fetching eBook:", error);
       }
     };
 
@@ -41,41 +34,51 @@ const EbookPage = () => {
   return (
     <>
       <div className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
-        <h1 className="text-center text-4xl font-body mt-10 mb-8">Tus e-books gratuitos</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8 place-items-center">
-          {ebooks.map((ebook, index) => (
-            <div key={index} className="flex flex-col items-center">
-              {/* Tarjeta */}
-              <div className="border rounded-lg p-3 bg-background shadow-md flex flex-col items-center w-[200px] h-[300px]">
-                <img
-                  src={ebook.imageUrl}
-                  alt={ebook.name}
-                  className="w-full h-[75%] object-cover mx-auto mb-3"
-                  onError={(e) => {
-                    e.target.src = '/path/to/default-image.jpg';
-                    console.error(`Error loading image for ${ebook.name}`);
-                  }}
-                />
-                <h3 className="text-sm font-body text-center text-foreground mb-2 break-words">
-                  {ebook.name.replace('.pdf', '').replace(/-/g, ' ')}
-                </h3>
-              </div>
+        <h1 className="text-center text-4xl font-body mt-10 mb-4">Aprendizaje Funcional</h1>
+        <p className="text-center text-lg mb-10 italic text-muted-foreground">
+          Guía para autodidactas creativos
+        </p>
+
+        {ebook && (
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <img
+              src={ebook.imageUrl}
+              alt={ebook.title}
+              className="w-[300px] h-[400px] object-cover rounded-xl shadow-md"
+            />
+
+            <div className="flex-1 max-w-xl">
+              <p className="mb-4">
+                ¿Sos autodidacta y sentís que aprendés a medias, que te cuesta avanzar o que te dispersás fácilmente?
+                Esta guía te ofrece un método claro y funcional para estructurar tu aprendizaje de forma creativa, realista y sostenible.
+              </p>
+
+              <ul className="list-disc pl-5 mb-4">
+                <li>Cómo organizar tu aprendizaje sin rigidez</li>
+                <li>Aplicar lo que aprendés y no olvidarlo</li>
+                <li>Sostener tu motivación y avanzar con foco</li>
+              </ul>
+
+              <p className="mb-6">📥 Dejá tu mail para recibir el PDF gratuito:</p>
 
               <a
                 href={ebook.downloadUrl}
-                className="mt-3 inline-block text-white bg-primary py-1 px-3 rounded-lg hover:bg-purple-700 transition text-sm"
+                className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Descargar eBook
+                Descargar Guía
               </a>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
+      <NewsletterForm />
       <Navbar />
+
     </>
+    
   );
 };
 
-export default EbookPage;
+export default EbookLanding;
