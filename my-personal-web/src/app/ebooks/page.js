@@ -31,12 +31,16 @@ const EbookLanding = () => {
     fetchEbooks();
   }, []);
 
+  const handleEmailSubmit = () => {
+    // Esta función ahora maneja el estado después de que el email es enviado, pero no es necesaria para la descarga directa
+  };
+
   return (
     <>
       <div className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
-        <h1 className="text-center text-4xl font-body mt-10 mb-4">Aprendizaje Funcional</h1>
+        <h1 className="text-center text-4xl font-body mt-10 mb-4">Aprendizaje Musical Funcional</h1>
         <p className="text-center text-lg mb-10 italic text-muted-foreground">
-          Guía para autodidactas creativos
+          Guía práctica para autodidactas
         </p>
 
         {ebook && (
@@ -49,35 +53,32 @@ const EbookLanding = () => {
 
             <div className="flex-1 max-w-xl">
               <p className="mb-4">
-                ¿Sos autodidacta y sentís que aprendés a medias, que te cuesta avanzar o que te dispersás fácilmente?
-                Esta guía te ofrece un método claro y funcional para estructurar tu aprendizaje de forma creativa, realista y sostenible.
+              ¿Estás aprendiendo música por tu cuenta y no sabes si vas por buen camino?
+              Sentís que avanzás, pero a veces te perdés, te llenás de info o no sabés en qué enfocarte
               </p>
 
-              <ul className="list-disc pl-5 mb-4">
-                <li>Cómo organizar tu aprendizaje sin rigidez</li>
-                <li>Aplicar lo que aprendés y no olvidarlo</li>
-                <li>Sostener tu motivación y avanzar con foco</li>
+              <p>
+              Este e-book te ayuda a organizar tu proceso, basándote en lo que vos necesitás, 
+              con lo que ya tenés y al ritmo que puedas.
+              </p>
+
+              <ul className="list-disc pl-5 mb-4 mt-4">
+                <li>Cómo tomar decisiones que den sentido a tu aprendizaje</li>
+                <li>Interpretar canciones desde lo esencial</li>
+                <li>Usar tus recursos con criterio y creatividad</li>
+                <li> Sostener el proceso sin frustrarte</li>
               </ul>
 
-              <p className="mb-6">📥 Dejá tu mail para recibir el PDF gratuito:</p>
+              <p className="mb-6">📥 Deja tu mail y descarga el PDF gratuito:</p>
 
-              <a
-                href={ebook.downloadUrl}
-                className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Descargar Guía
-              </a>
+              {/* Mostrar el formulario */}
+              <NewsletterForm onSubmit={handleEmailSubmit} downloadUrl={ebook.downloadUrl} />
             </div>
           </div>
         )}
       </div>
-      <NewsletterForm />
       <Navbar />
-
     </>
-    
   );
 };
 

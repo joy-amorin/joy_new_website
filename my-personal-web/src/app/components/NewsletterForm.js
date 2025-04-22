@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
-const NewsletterForm = () => {
+const NewsletterForm = ({ onSubmit, downloadUrl }) => { // Recibe la prop downloadUrl
+  const [status, setStatus] = useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
+
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/22621291/2xgl0a3/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        onSubmit(); // Llama a la función onSubmit cuando el correo se envíe con éxito
+
+        // Iniciar la descarga del eBook después de enviar el correo
+        window.location.href = downloadUrl; // Esto iniciará la descarga
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
-    <form
-      action="https://hooks.zapier.com/hooks/catch/22621291/2xgl0a3/" // URL del webhook de Zapier
-      method="POST"
-      className="flex flex-col gap-4 max-w-md mx-auto"
-    >
-      <label htmlFor="email" className="font-semibold">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
+      <label htmlFor="email" className="text-foreground">
         Ingresa tu correo electrónico:
       </label>
       <input
@@ -15,7 +38,7 @@ const NewsletterForm = () => {
         name="email"
         id="email"
         required
-        className="p-2 border border-gray-300 rounded-md"
+        className="p-2 text-background border border-gray-300 rounded-md"
       />
       <button
         type="submit"
@@ -23,6 +46,13 @@ const NewsletterForm = () => {
       >
         Descargar eBook
       </button>
+
+      {status === "success" && (
+        <p className="mt-4 text-green-500">¡Gracias! El correo ha sido enviado correctamente.</p>
+      )}
+      {status === "error" && (
+        <p className="mt-4 text-red-500">Hubo un error. Intenta nuevamente.</p>
+      )}
     </form>
   );
 };
