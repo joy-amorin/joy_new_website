@@ -1,29 +1,29 @@
-"use client";
-
-import { useEffect } from "react";
+import React from "react";
 
 const NewsletterForm = () => {
-  useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="https://assets.mailerlite.com/js/universal.js"]'
-    );
-    if (existingScript) return;
-
-    const script = document.createElement("script");
-    script.src = "https://assets.mailerlite.com/js/universal.js";
-    script.async = true;
-    script.onload = () => {
-      if (typeof window.ml === "function") {
-        window.ml("account", "1468258"); //ID de MailerLite
-      }
-    };
-    document.body.appendChild(script);
-  }, []);
-
   return (
-    <div className="w-full max-w-md mx-auto">
-      <div className="ml-embedded" data-form="BnayXz"></div>
-    </div>
+    <form
+      action="https://hooks.zapier.com/hooks/catch/22621291/2xgl0a3/" // URL del webhook de Zapier
+      method="POST"
+      className="flex flex-col gap-4 max-w-md mx-auto"
+    >
+      <label htmlFor="email" className="font-semibold">
+        Ingresa tu correo electrónico:
+      </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        className="p-2 border border-gray-300 rounded-md"
+      />
+      <button
+        type="submit"
+        className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
+      >
+        Descargar eBook
+      </button>
+    </form>
   );
 };
 
