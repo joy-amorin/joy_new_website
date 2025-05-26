@@ -16,8 +16,8 @@ const SectionInicio = () => {
           <Image
             src="/joy-home-2.jpg"
             alt="Joy Amorin"
-            width={420}
-            height={420}
+            width={450}
+            height={450}
             className="rounded-full"
           />
         </div>
