@@ -42,7 +42,7 @@ const BlogPage = () => {
 
   return (
     <section id="blog" className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
-      <h2 className="text-4xl font-body mb-12 text-center mt-10">Mis blogs</h2>
+      <h2 className="text-4xl font-body mb-12 text-center mt-10"> Blog</h2>
         {entries.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {entries.map((entry) => {
