@@ -14,10 +14,10 @@ const SectionInicio = () => {
         {/* Foto */}
         <div className="flex justify-center md:block">
           <Image
-            src="/joy-home.jpg"
+            src="/joy-home-2.jpg"
             alt="Joy Amorin"
-            width={250}
-            height={250}
+            width={420}
+            height={420}
             className="rounded-full"
           />
         </div>
