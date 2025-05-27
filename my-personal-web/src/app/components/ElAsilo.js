@@ -20,9 +20,9 @@ const SectionCuntica = () => {
         <h2 className="text-4xl font-body mb-4 mt-10"> El asilo de la bestia</h2>
         <p>
             El Asilo de la Bestia es una banda de hard rock/metal fundada en 2020, 
-            en la que me uní como tecladista en mayo de 2024. La misma cuenta con un EP
-            y un álbum de estudio, <em>Despertar</em>, que fue nominado ese año a los premios
-            Graffiti como mejor álbum de Metal y Hard Rock.
+            en la que me uní como tecladista en mayo de 2024 y con la que continúo trabajando hasta la fecha.
+            Cuenta con un EP titulado <em>Epidemia</em> y un álbum de estudio, <em>Despertar</em>, 
+            nominado en 2024 a los Premios Graffiti como Mejor Álbum de Metal y Hard Rock.
             </p>
             <p>
             En su trayectoria, ha tocado en festivales como Durazno Rock,

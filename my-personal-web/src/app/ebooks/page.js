@@ -32,7 +32,7 @@ const EbookLanding = () => {
   }, []);
 
   const handleEmailSubmit = () => {
-    // Esta función ahora maneja el estado después de que el email es enviado, pero no es necesaria para la descarga directa
+    // manejo el estado después de que el email es enviado
   };
 
   return (
@@ -54,12 +54,12 @@ const EbookLanding = () => {
             <div className="flex-1 max-w-xl">
               <p className="mb-4">
               ¿Estás aprendiendo música por tu cuenta y no sabes si vas por buen camino?
-              Sentís que avanzás, pero a veces te perdés, te llenás de info o no sabés en qué enfocarte
+              Sentís que avanzás, pero a veces te perdés, te llenás de info o no sabés en qué enfocarte.
               </p>
 
               <p>
-              Este e-book te ayuda a organizar tu proceso, basándote en lo que vos necesitás, 
-              con lo que ya tenés y al ritmo que puedas.
+              Este e-book te ayuda a organizar tu proceso, basándote en lo que necesitas, 
+              con lo que ya tienes y al ritmo que puedas.
               </p>
 
               <ul className="list-disc pl-5 mb-4 mt-4">

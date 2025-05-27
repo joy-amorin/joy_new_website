@@ -19,23 +19,30 @@ const SectionCuntica = () => {
     <div className="text-center md:text-left md:w-1/2"> 
         <h2 className="text-4xl font-body mb-4 mt-10"> Cuántica</h2>
         <p>
-            En 2017, fundé Cuántica junto al bajista Gastón Gómez, una banda de metal alternativo 
-            influenciada por grupos como Linkin Park, Papa Roach y Bring Me The Horizon, 
-            en la que fui vocalista y una de las principales compositoras junto al guitarrista 
-            Germán Alcoba. En 2018, lanzamos el EP <em>Plan Original</em>, presentándonos en la 
-            Sala Zitarrosa como parte de Montevideo Capital de la Música Emergente, donde 
-            compartimos escenario con otras bandas latinoamericanas, 
-            y tocamos en varios escenarios de Montevideo dentro de ese mismo marco.
-            En 2019, participamos en la Fiesta del Río y la Convivencia junto a artistas como 
-            Pecho e’ Fierro, y realizamos la presentación oficial del EP en el Teatro del 
-            Centro Cultural Goes, entre otras presentaciones destacadas. 
-            En 2020, nos presentamos en el Teatro del Centro Cultural Florencio Sánchez, 
-            compartiendo escenario con Cadáveres Ilustres y otros artistas reconocidos.
-            </p>
-            <p>
-            Actualmente estoy trabajando en un proyecto solista, versionando canciones que compuse para Cuántica y
-            que formaban parte de nuestro repertorio en vivo.
-            </p>
+          En 2017 fundé <em>Cuántica</em> junto al bajista Gastón Gómez, una banda de metal alternativo 
+          influenciada por grupos como Linkin Park, Papa Roach y Bring Me The Horizon. Me desempeñé
+          como vocalista y fui una de las principales compositoras junto al guitarrista Germán Alcoba. 
+          La banda estuvo activa entre 2017 y 2020.
+        </p>
+        <p>
+          En 2018 lanzamos el EP Plan Original, el cual presentamos en la Sala Zitarrosa como parte del ciclo 
+          Montevideo Capital de la Música Emergente, compartiendo escenario con bandas de distintos países 
+          latinoamericanos. También nos presentamos en varios escenarios de Montevideo en el marco de ese mismo 
+          programa.
+        </p>
+        <p>
+            En 2019 participamos en la Fiesta del Río y la Convivencia junto a artistas como Pecho e’ Fierro, y 
+            realizamos la presentación oficial del EP en el Teatro del Centro Cultural Goes, entre otras 
+            presentaciones destacadas. En 2020, tocamos en el Teatro del Centro Cultural Florencio Sánchez junto a 
+            Cadáveres Ilustres y otros artistas reconocidos.
+        </p>
+        <p>
+          <em>Cuántica</em> fue un proyecto muy significativo para mí, tanto a nivel musical como conceptual. 
+          Le di ese nombre inspirada en la idea de los “saltos cuánticos” del libro <em>Los pájaros se 
+          orientan con la física cuántica</em>, de <em>Jorge Blaschke</em>, donde se explica cómo los electrones pueden 
+          cambiar de estado sin recorrer el espacio intermedio. Creíamos que, si hacíamos las cosas de cierta
+          manera, también nosotros podíamos dar esos saltos.
+        </p>
         </div>
     </div>
     {/* Iframes debajo del texto */}
