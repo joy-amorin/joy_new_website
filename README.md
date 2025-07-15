@@ -24,7 +24,7 @@ This repository contains the source code for my personal website, where I share 
 2. Install dependencies:
 npm install
 
-3- Create a archivo .env.localfile and add your Contentful credentials and other environment variables:
+3- Create a file .env.localfile and add your Contentful credentials and other environment variables:
 
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=tu_space_id
 
