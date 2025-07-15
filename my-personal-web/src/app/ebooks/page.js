@@ -48,7 +48,7 @@ const EbookLanding = () => {
             <img
               src={ebook.imageUrl}
               alt={ebook.title}
-              className="w-[300px] h-[400px] object-cover rounded-xl shadow-md"
+              className="w-[320px] h-[400px] object-cover rounded-xl shadow-md"
             />
 
             <div className="flex-1 max-w-xl">
