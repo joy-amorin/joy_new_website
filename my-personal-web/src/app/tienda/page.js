@@ -7,7 +7,7 @@ export default function TiendaPage() {
   return (
     <>
     <main className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl text-foreground font-body mb-8">Tienda</h1>
+      <h1 className="text-4xl text-center text-foreground font-body mb-10 mt-14">Explora la tienda</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {products.map((product) => (

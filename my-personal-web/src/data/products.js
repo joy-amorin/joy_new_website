@@ -12,6 +12,6 @@ export const products = [
     title: 'Cuaderno digital de práctica',
     description: 'Un cuaderno interactivo para diseñar tu rutina de práctica paso a paso.',
     price: 14.99,
-    image: 'https://web-resources.joy-resources.workers.dev/ebooks/aprendizaje-musical-funcional-guia-para-autodidactas.jpg'
+    image: 'https://web-resources.joy-resources.workers.dev/ebooks/cuaderno-digital-tu-plan-autodidacta.jpg'
   }
 ];

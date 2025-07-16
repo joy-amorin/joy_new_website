@@ -8,7 +8,7 @@ const SectionCuntica = () => {
         <div className="cuantica-image flex-shrink-0 mb-8 md:mb-0 md:w-1/2 mt-20">
         <Image
             src="/el-asilo.png"
-            alt="cuantica"
+            alt="el-asilo"
             width={500}
             height={500}
             className="rounded-lg object-cover"
