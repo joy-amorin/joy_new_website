@@ -153,7 +153,16 @@ export default function Navbar() {
                   Recursos
                 </a>
               </li>
-              <AnimatePresence>
+              <li>
+                  <Link
+                  href="/tienda"
+                  className="block py-2 hover:text-primary"
+                  onClick={() => setIsDropdownOpen(false)} // Cerramos el menú
+                    >
+                    Tienda
+                  </Link>
+              </li>
+                <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.ul
                     initial={{ opacity: 0, y: -10 }}
