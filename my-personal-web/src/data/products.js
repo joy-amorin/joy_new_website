@@ -5,13 +5,15 @@ export const products = [
     title: 'E-book: Organiza tu práctica musical',
     description: 'Una guía clara para estructurar tu aprendizaje musical autodidacta.',
     price: 9.99,
-    image: 'https://web-resources.joy-resources.workers.dev/ebooks/aprendizaje-musical-funcional-guia-para-autodidactas.jpg'
+    image: 'https://web-resources.joy-resources.workers.dev/ebooks/aprendizaje-musical-funcional-guia-para-autodidactas.jpg',
+    slug: 'e-book'
   },
   {
     id: 'workbook001',
     title: 'Cuaderno digital de práctica',
     description: 'Un cuaderno interactivo para diseñar tu rutina de práctica paso a paso.',
     price: 14.99,
-    image: 'https://web-resources.joy-resources.workers.dev/ebooks/cuaderno-digital-tu-plan-autodidacta.jpg'
+    image: 'https://web-resources.joy-resources.workers.dev/ebooks/cuaderno-digital-tu-plan-autodidacta.jpg',
+    slug: 'workbook'
   }
 ];

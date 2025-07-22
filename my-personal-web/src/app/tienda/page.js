@@ -2,6 +2,7 @@
 
 import { products } from '@/data/products';
 import Navbar from '../components/Navbar';
+import Link from 'next/link';
 
 export default function TiendaPage() {
   return (
@@ -16,12 +17,14 @@ export default function TiendaPage() {
             <h2 className="text-xl text-foreground font-body mb-2">{product.title}</h2>
             <p className="text-foreground font-body mb-4">{product.description}</p>
             <span className="text-lg font-body text-foreground mb-4">${product.price}</span>
-            <button
-              className="bg-primary text-foreground px-4 py-2 rounded hover:bg-opacity-90 transition"
-              onClick={() => alert('Funcionalidad de compra próximamente')}
-            >
-              Comprar
-            </button>
+
+            <Link href={`/tienda/${product.slug}`}>
+              <button
+                className="bg-primary text-foreground px-4 py-2 rounded hover:bg-opacity-90 transition"
+              >
+                Comprar
+              </button>
+            </Link>
           </div>
         ))}
       </div>
