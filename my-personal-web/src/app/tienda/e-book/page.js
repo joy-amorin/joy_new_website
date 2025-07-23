@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/app/components/Navbar";
+import Link from "next/link";
 
 export default function EbookPage() {
     return (
@@ -35,8 +36,12 @@ export default function EbookPage() {
                              una dirección clara entre tanto contenido disponible.
                         </p>
                         <p className="mb-4">
-                            Este e-book te ayuda a organizar tu proceso, basándote en lo que vos necesitás, 
-                            con lo que ya tenés y al ritmo que puedas.
+                            Esta guía práctica está pensada tanto para principiantes como para quienes ya 
+                            tienen experiencia, pero quieren optimizar su estudio y avanzar con más foco.
+                        </p>
+                        <p className="mb-4">
+                           Con propuestas claras y herramientas funcionales, vas a poder tomar decisiones 
+                           conscientes y avanzar con sentido desde donde estás.
                         </p>
                     </div>
 
@@ -58,51 +63,43 @@ export default function EbookPage() {
                 
                 {/* Beneficios detallados */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-body mb-8 text-center">✅ Lo que vas a lograr:</h3>
+                    <h3 className="text-2xl font-body mb-8 text-center">✅ Lo que encontrarás dentro:</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-foreground/5 rounded-xl p-6">
                             <h4 className="font-body text-lg mb-3 flex items-center gap-2">
-                                🎯 <span>Decisiones con Sentido</span>
+                                📋 <span>Planificador Personalizado</span>
                             </h4>
-                            <ul className="list-disc list-inside space-y-2 text-foreground/90">
-                                <li>Dejá de saltar de tutorial en tutorial sin rumbo</li>
-                                <li>Armá tu propio plan de estudio personalizado</li>
-                                <li>Priorizá lo que realmente necesitás aprender ahora</li>
-                            </ul>
+                                <p>Herramientas para definir tus objetivos y diseñar un plan realista 
+                                    y flexible según tu ritmo
+                                </p>
                         </div>
                         
                         <div className="bg-foreground/5 rounded-xl p-6">
                             <h4 className="font-body text-lg mb-3 flex items-center gap-2">
-                                🎵 <span>Enfoque Efectivo</span>
+                                🎯 <span>Guía de Enfoque Práctico</span>
                             </h4>
-                            <ul className="list-disc list-inside space-y-2 text-foreground/90">
-                                <li>Identificá qué elementos estudiar primero en cada canción</li>
-                                <li>Organizá tu práctica para obtener resultados más rápido</li>
-                                <li>Evitá perderte en detalles que no son prioritarios ahora</li>
-                            </ul>
+                                <p>Criterios claros para abordar canciones y organizar prácticas 
+                                    efectivas sin dispersarte
+                                </p>
                         </div>
                         
                         <div className="bg-foreground/5 rounded-xl p-6">
                             <h4 className="font-body text-lg mb-3 flex items-center gap-2">
-                                🧠 <span>Recursos Inteligentes</span>
+                                🧠 <span>Recursos y Estrategias</span>
                             </h4>
-                            <ul className="list-disc list-inside space-y-2 text-foreground/90">
-                                <li>Aprovechá al máximo el tiempo que tenés disponible</li>
-                                <li>Convertí cualquier canción en tu material de estudio</li>
-                                <li>Usá la tecnología a tu favor, no en tu contra</li>
-                            </ul>
+                                <p>Sugerencias para aprovechar tu tiempo, usar canciones como material 
+                                    y sacar provecho a la tecnología
+                                </p>
                         </div>
                         
                         <div className="bg-foreground/5 rounded-xl p-6">
                             <h4 className="font-body text-lg mb-3 flex items-center gap-2">
-                                💪 <span>Motivación Sostenible</span>
+                                💪 <span>Herramientas para el Proceso</span>
                             </h4>
-                            <ul className="list-disc list-inside space-y-2 text-foreground/90">
-                                <li>Manejá las expectativas de forma realista</li>
-                                <li>Celebrá tus avances aunque sean pequeños</li>
-                                <li>Mantenete motivado/a en los momentos difíciles</li>
-                            </ul>
+                                <p>Consejos para mantener hábitos sostenibles, reconocer avances y 
+                                    construir una relación positiva con tu proceso
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -147,19 +144,19 @@ export default function EbookPage() {
                 <div className="bg-gradient-to-r from-foreground/5 to-transparent border-l-4 border-primary rounded-r-xl p-8 mb-12">
                     <h3 className="text-xl font-body mb-3">¿Querés llevar tu aprendizaje un paso más allá?</h3>
                     <p className="text-foreground/90 mb-4">
-                        Si querés profundizar y aplicar con más ejercicios, también está disponible un {' '}
-                        <strong>Workbook con ejercicios específicos</strong> que complementa perfectamente esta guía. 
+                        Si querés poner en práctica lo aprendido, también está disponible un {' '}
+                        <strong>Workbook con ejercicios específicos</strong> que complementan esta guía. 
                     </p>
-                    <a href="#" className="text-primary hover:underline font-medium text-lg">
+                    <Link href="/tienda/workbook" className="text-primary hover:underline font-medium text-lg">
                         Conocé el Workbook aquí →
-                    </a>
+                    </Link>
                 </div>
 
                 {/* P.S. final */}
                 <div className="text-center bg-foreground/5 rounded-xl p-6">
                     <p className="text-foreground/80 italic text-lg">
-                        <strong>P.S.</strong> La música no tiene que ser complicada. Con el enfoque correcto, 
-                        podés disfrutar del proceso desde el primer día y ver resultados reales en tu aprendizaje.
+                        Con un plan realista y funcional, podés tomar decisiones claras y 
+                        construir una práctica musical alineada con tus objetivos.
                     </p>
                 </div>
             </div>
