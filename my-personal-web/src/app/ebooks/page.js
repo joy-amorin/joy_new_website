@@ -39,11 +39,6 @@ const EbookLanding = () => {
                 semanal para que planifiques tus sesiones.
               </p>
 
-              <p>
-              Este e-book te ayuda a organizar tu proceso, basándote en lo que necesitas, 
-              con lo que ya tienes y al ritmo que puedas.
-
-              </p>
 
               <ul className="list-disc pl-5 mb-4 mt-4">
                 <li>Cómo definir objetivos simples y claros para tu práctica</li>
