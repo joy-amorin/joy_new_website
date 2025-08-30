@@ -21,9 +21,9 @@ const SectionAbout = () => {
         <h2 className="text-4xl font-body mb-4 mt-10">Investigar y crear</h2>
         <p className="text-base md:text-lg leading-relaxed">
             Investigar y crear siempre ha sido mi forma de conectar con la música. Comencé en la adolescencia como 
-            autodidacta, tocando instrumentos como la guitarra y la batería. Después de tomar clases, decidí seguir 
-            estudiando por mi cuenta, interesándome en la grabación y creación de mi propia música. Esto me llevó a 
-            explorar programas de producción (DAWs) y adentrarme en el mundo de los instrumentos virtuales.
+            autodidacta, tocando instrumentos como la guitarra y la batería. Después de tomar algunas clases por un tiempo, 
+            decidí seguir estudiando por mi cuenta, interesándome en el teclado y la grabación y creación de mi propia música. 
+            Esto me llevó a explorar programas de producción (DAWs) y adentrarme en el mundo de los instrumentos virtuales.
         </p>
         <p className="text-base md:text-lg leading-relaxed mt-4">
             Mi curiosidad por la tecnología también me abrió las puertas al mundo de la programación, lo que derivó 
