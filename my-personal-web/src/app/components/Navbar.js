@@ -61,15 +61,7 @@ export default function Navbar() {
               Blog
             </a>
           </li>
-          <li>
-            <Link
-              href="/tienda"
-              className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            
-            >
-              Tienda
-            </Link>
-          </li>
+         
           {/* Barra desplegable de recursos */}
           <li className="relative">
             <button
@@ -95,6 +87,15 @@ export default function Navbar() {
                 </motion.ul>
               )}
             </AnimatePresence>
+          </li>
+           <li>
+            <Link
+              href="/tienda"
+              className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            
+            >
+              Tienda
+            </Link>
           </li>
           <li>
             <a
