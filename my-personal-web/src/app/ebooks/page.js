@@ -37,9 +37,6 @@ const EbookLanding = () => {
                 Esta mini guía te ofrece herramientas prácticas para organizar tu práctica 
                 y avanzar de forma clara y efectiva, incluyendo un pequeño planificador 
                 semanal para que planifiques tus sesiones.
-
-              ¿Estás aprendiendo música por tu cuenta y no sabes si vas por buen camino?
-              Sentís que avanzás, pero a veces te perdés, te llenás de info o no sabés en qué enfocarte.
               </p>
 
               <p>
