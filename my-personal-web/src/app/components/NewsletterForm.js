@@ -48,7 +48,7 @@ const NewsletterForm = ({ onSubmit, downloadUrl }) => { // Recibe la prop downlo
       </button>
 
       {status === "success" && (
-        <p className="mt-4 text-green-500">¡Gracias! El correo ha sido enviado correctamente.</p>
+        <p className="mt-4 text-green-500">¡Genial! Tu mini guía ha sido descargada exitosamente.</p>
       )}
       {status === "error" && (
         <p className="mt-4 text-red-500">Hubo un error. Intenta nuevamente.</p>

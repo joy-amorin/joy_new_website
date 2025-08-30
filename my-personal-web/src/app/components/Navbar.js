@@ -61,6 +61,7 @@ export default function Navbar() {
               Blog
             </a>
           </li>
+         
           {/* Barra desplegable de recursos */}
           <li className="relative">
             <button
@@ -86,6 +87,15 @@ export default function Navbar() {
                 </motion.ul>
               )}
             </AnimatePresence>
+          </li>
+           <li>
+            <Link
+              href="/tienda"
+              className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            
+            >
+              Tienda
+            </Link>
           </li>
           <li>
             <a
@@ -144,7 +154,16 @@ export default function Navbar() {
                   Recursos
                 </a>
               </li>
-              <AnimatePresence>
+              <li>
+                  <Link
+                  href="/tienda"
+                  className="block py-2 hover:text-primary"
+                  onClick={() => setIsDropdownOpen(false)} // Cerramos el menú
+                    >
+                    Tienda
+                  </Link>
+              </li>
+                <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.ul
                     initial={{ opacity: 0, y: -10 }}

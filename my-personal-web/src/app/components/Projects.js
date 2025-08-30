@@ -19,7 +19,7 @@ const SectionProjects = () => {
         <div className="project-card cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => handleProjectClick('/projects/cuantica')}>
           <Image
             src="/cuantica.jpg"
-            alt="Proyecto 1"
+            alt="cuantica"
             width={400}
             height={300}
             className="rounded-lg object-cover mb-4 hover:shadow-[0_4px_10px_#9340ff]"
