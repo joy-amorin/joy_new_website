@@ -8,7 +8,10 @@ const EbookLanding = () => {
   const ebook = resources[0]; // solo hay un recurso
 
   const handleEmailSubmit = () => {
+
     //  manejar el estado después de enviar el email si querés trackear algo
+
+    // manejo el estado después de que el email es enviado
   };
 
   return (
@@ -29,10 +32,20 @@ const EbookLanding = () => {
 
             <div className="flex-1 max-w-xl">
               <p className="mb-4">
+
                 ¿Estás aprendiendo música por tu cuenta pero no sabés en qué enfocarte?
                 Esta mini guía te ofrece herramientas prácticas para organizar tu práctica 
                 y avanzar de forma clara y efectiva, incluyendo un pequeño planificador 
                 semanal para que planifiques tus sesiones.
+
+              ¿Estás aprendiendo música por tu cuenta y no sabes si vas por buen camino?
+              Sentís que avanzás, pero a veces te perdés, te llenás de info o no sabés en qué enfocarte.
+              </p>
+
+              <p>
+              Este e-book te ayuda a organizar tu proceso, basándote en lo que necesitas, 
+              con lo que ya tienes y al ritmo que puedas.
+
               </p>
 
               <ul className="list-disc pl-5 mb-4 mt-4">

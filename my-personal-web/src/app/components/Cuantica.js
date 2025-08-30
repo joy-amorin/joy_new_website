@@ -39,9 +39,11 @@ const SectionCuntica = () => {
         <p>
           <em>Cuántica</em> fue un proyecto muy significativo para mí, tanto a nivel musical como conceptual. 
           Le di ese nombre inspirada en la idea de los “saltos cuánticos” del libro <em>Los pájaros se 
-          orientan con la física cuántica</em>, de <em>Jorge Blaschke</em>, donde se explica cómo los electrones pueden 
+          orientan con la física cuántica</em>, de <em>Jorge Blaschke</em>, donde se explica cómo los electrones pueden
           cambiar de estado sin recorrer el espacio intermedio. Creíamos que, si hacíamos las cosas de "cierta
           manera", también nosotros podíamos dar esos saltos.
+          cambiar de estado sin recorrer el espacio intermedio. Creíamos que, si hacíamos las cosas de cierta
+          manera, también nosotros podíamos dar esos saltos.
         </p>
         </div>
     </div>
