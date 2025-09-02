@@ -14,7 +14,6 @@ export async function POST(request) {
 
     const { slug } = body;
 
-
     // Buscar el producto según el slug
     const product = products.find((p) => p.slug === slug);
 
@@ -40,7 +39,7 @@ export async function POST(request) {
           },
         
         ],
-        
+
         back_urls: {
           success: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/success?slug=${slug}`,
           failure: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/failure`,
