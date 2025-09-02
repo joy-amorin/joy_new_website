@@ -21,7 +21,7 @@ export default function BuyButton({ preferenceId }) {
         { locale: "es-AR" }
       );
 
-       // Redirigir al checkout
+      // Redirigir al checkout
       mp.checkout({
         preference: { id: preferenceId },
         autoOpen: true,
@@ -35,13 +35,16 @@ export default function BuyButton({ preferenceId }) {
 
   return (
     <>
-     {/* Cargar el script oficial de Mercado Pago */}
+      {/* Cargar el script oficial de Mercado Pago */}
       <Script src="https://sdk.mercadopago.com/js/v2" strategy="afterInteractive" />
 
       <button
         onClick={handleBuy}
         disabled={loading || !preferenceId}
-        className="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
+        className={`
+          bg-primary text-white px-6 py-2 rounded text-foreground font-body w-full md:w-auto
+          ${loading ? "opacity-60 cursor-not-allowed" : "transition hover:bg-primary-dark"}
+        `}
       >
         {loading ? "Procesando..." : "Comprar"}
       </button>

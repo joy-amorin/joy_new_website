@@ -18,7 +18,7 @@ export default function TiendaPage() {
             <p className="text-foreground font-body mb-4">{product.description}</p>
             <span className="text-lg font-body text-foreground mb-4">${product.price}</span>
 
-            <Link href={`/tienda/${product.slug}`}>
+            <Link href={`/tienda/${product.id}`}>
               <button
                 className="bg-primary text-foreground px-4 py-2 rounded hover:bg-opacity-90 transition"
               >
