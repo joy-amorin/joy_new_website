@@ -16,7 +16,7 @@ export default function TiendaPage() {
             <img src={product.image} alt={product.title} className="w-full max-w-[12rem] h-auto object-contain mb-4 rounded" />
             <h2 className="text-xl text-foreground font-body mb-2">{product.title}</h2>
             <p className="text-foreground font-body mb-4">{product.description}</p>
-            <span className="text-lg font-body text-foreground mb-4">${product.price}</span>
+            <span className="text-lg font-body text-foreground mb-4">{product.price} USD</span>
 
             <Link href={`/tienda/${product.id}`}>
               <button

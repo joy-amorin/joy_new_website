@@ -72,7 +72,7 @@ export default function ProductPage({ params }) {
           </div>
 
           <div className="font-body text-foreground">
-            <p className="mb-4 text-2xl font-semibold">${product.price}</p>
+            <p className="mb-4 text-2xl font-foreground">{product.price} USD</p>
 
             {/* Botón de compra */}
             {preferenceId ? (
