@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { MercadoPagoConfig, Payment } from "mercadopago";
+import { generateToken } from "@/utils/jwt"; // importa tu función de generación de JWT
 
 // Inicializar cliente con tu access token (privado)
 const client = new MercadoPagoConfig({
@@ -24,14 +25,27 @@ export async function POST(req) {
 
       if (result.status === "approved") {
         console.log("✅ Pago aprobado:", result.id, "Email comprador:", result.payer?.email);
-        // Aquí podrías enviar un email con el link de descarga
-        // o marcar en tu sistema que el producto está habilitado
+
+        // Generar token JWT temporal para descarga
+        const slug = result.external_reference || result.preference_id; 
+        // Si tienes el slug del producto en external_reference, úsalo; si no, puedes usar preference_id
+        const token = generateToken(slug);
+
+        // Devuelve token en la respuesta para que tu front lo use si quieres
+        return NextResponse.json({
+          status: "approved",
+          productSlug: slug,
+          token,
+        });
       } else {
         console.log("❌ Pago NO aprobado. Estado:", result.status);
+        return NextResponse.json({
+          status: result.status,
+        });
       }
     }
 
-    return NextResponse.json({ status: "ok" });
+    return NextResponse.json({ status: "ignored" });
   } catch (error) {
     console.error("⚠️ Error procesando webhook:", error);
     return NextResponse.json({ status: "error" }, { status: 500 });

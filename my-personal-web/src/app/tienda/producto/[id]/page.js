@@ -1,17 +1,40 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
 import Navbar from "@/app/components/Navbar";
 import CheckoutButton from "@/app/components/CheckoutButton";
 
-export default function ProductPage({ params }) {
-    const  resolvedParams = React.use(params)
-    const { id } = resolvedParams; // id pasado en la URL
-    const product = products.find((p) => p.id === id);
+export default function ProductPage(props) {
+  // Desenvuelve los params correctamente en Next.js 15+
+  const resolvedParams = React.use(props.params);
+  const { id } = resolvedParams;
 
-    const [preferenceId, setPreferenceId] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState(null);
+  const [preferenceId, setPreferenceId] = useState(null);
 
+  // Fetch de productos dinámico
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  // Busca el producto según el id del URL
+  useEffect(() => {
+    if (products.length === 0) return;
+    const found = products.find((p) => p.id === id);
+    setProduct(found);
+  }, [products, id]);
+
+  // Crea la preferencia de Mercado Pago
   useEffect(() => {
     if (!product) return;
 
@@ -41,7 +64,7 @@ export default function ProductPage({ params }) {
     return (
       <main className="p-8 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl text-foreground font-body mb-4">
-          Producto no encontrado
+          Ponete pilla
         </h1>
         <p>El producto que estás buscando no existe.</p>
       </main>
@@ -76,7 +99,7 @@ export default function ProductPage({ params }) {
 
             {/* Botón de compra */}
             {preferenceId ? (
-              <CheckoutButton preferenceId = {preferenceId} />
+              <CheckoutButton preferenceId={preferenceId} />
             ) : (
               <button
                 className="bg-primary text-foreground px-6 py-2 rounded hover:bg-primary-dark transition text-lg font-body w-full md:w-auto"

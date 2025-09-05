@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { MercadoPagoConfig, Preference } from "mercadopago";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
 
 // Inicializar cliente Mercado Pago
 const client = new MercadoPagoConfig({
@@ -12,8 +12,10 @@ export async function POST(request) {
     const body = await request.json();
     const { slug } = body;
 
-    // Buscar producto según el slug
+    // Obtener productos dinámicamente
+    const products = await getProducts();
     const product = products.find((p) => p.slug === slug);
+
     if (!product) {
       console.warn("Producto no encontrado para slug:", slug);
       return NextResponse.json(
