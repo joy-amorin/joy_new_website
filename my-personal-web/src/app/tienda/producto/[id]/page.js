@@ -64,7 +64,7 @@ export default function ProductPage(props) {
     return (
       <main className="p-8 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl text-foreground font-body mb-4">
-          Ponete pilla
+          Buscando producto
         </h1>
         <p>El producto que estás buscando no existe.</p>
       </main>
