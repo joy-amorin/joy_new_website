@@ -56,7 +56,7 @@ export default function SuccessPage() {
 
   return (
     <>
-      <main className="p-8 max-w-2xl mx-auto text-center">
+      <main className="p-8 max-w-2xl mx-auto text-center mt-20">
         {status === "approved" ? (
           <>
             <h1 className="text-3xl font-body text-foreground mb-6">
@@ -65,6 +65,11 @@ export default function SuccessPage() {
             <p className="mb-4 text-lg text-foreground">
               Gracias por tu compra de <strong>{product.title}</strong>.
             </p>
+
+            <p className="mb-4 text-lg text-foreground">
+              📥 Asegúrate de realizar la descarga antes de salir de la página.
+            </p>
+
             {downloadUrl ? (
               <a
                 href={downloadUrl}
