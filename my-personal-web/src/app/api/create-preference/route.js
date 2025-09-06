@@ -39,8 +39,8 @@ export async function POST(request) {
         ],
         back_urls: {
           success: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/success?slug=${slug}`,
-          failure: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/failure`,
-          pending: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/pending`,
+          failure: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/`,
+          pending: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/`,
         },
         auto_return: "approved",
         notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications`, // webhook
