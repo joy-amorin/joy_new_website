@@ -1,17 +1,22 @@
 "use client";
 
-import Navbar from '../components/Navbar';
-import NewsletterForm from '../components/NewsletterForm';
+import Navbar from '../../components/Navbar';
+import NewsletterForm from '@/app/components/NewsletterForm';
 import { resources } from '@/data/resources';
 
 const EbookLanding = () => {
-  const ebook = resources[0]; // solo hay un recurso
+
+  const ebook = {
+    title: "Mini guía de práctica musical",
+    image: "/images/mini-guia-de-practica-musical.jpg", 
+    description: "Tu sistema de objetivos claros para organizar tu práctica musical y avanzar de forma efectiva. Incluye un pequeño planificador semanal.",
+    resource: "/pdfs/mini-guia-de-practica-musical.pdf" 
+  };
 
   const handleEmailSubmit = () => {
 
-    //  manejar el estado después de enviar el email si querés trackear algo
+    //  manejar el estado después de enviar el email
 
-    // manejo el estado después de que el email es enviado
   };
 
   return (
@@ -49,7 +54,7 @@ const EbookLanding = () => {
 
               <p className="mb-6">📥 Deja tu mail y descarga el PDF gratuito:</p>
 
-              <NewsletterForm onSubmit={handleEmailSubmit} downloadUrl={ebook.resourse} />
+              <NewsletterForm onSubmit={handleEmailSubmit} downloadUrl={ebook.resource} />
             </div>
           </div>
         )}

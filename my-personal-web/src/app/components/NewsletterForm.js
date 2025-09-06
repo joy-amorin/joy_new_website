@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const NewsletterForm = ({ onSubmit, downloadUrl }) => { // Recibe la prop downloadUrl
+const NewsletterForm = ({ onSubmit, downloadUrl }) => {
   const [status, setStatus] = useState(null);
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
+    event.preventDefault(); // evita que el formulario se envíe de manera tradicional
 
     const formData = new FormData(event.target);
 
@@ -16,10 +16,16 @@ const NewsletterForm = ({ onSubmit, downloadUrl }) => { // Recibe la prop downlo
 
       if (response.ok) {
         setStatus("success");
-        onSubmit(); // Llama a la función onSubmit cuando el correo se envíe con éxito
+        onSubmit(); // llama a la función onSubmit cuando el correo se envíe con éxito
 
-        // Iniciar la descarga del eBook después de enviar el correo
-        window.location.href = downloadUrl; // Esto iniciará la descarga
+        // forzar la descarga del eBook
+        const link = document.createElement("a");
+        link.href = downloadUrl;
+        link.download = downloadUrl.split("/").pop(); // nombre del archivo
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
       } else {
         setStatus("error");
       }
