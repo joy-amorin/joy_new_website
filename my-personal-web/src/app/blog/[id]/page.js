@@ -5,7 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Navbar from "../../components/Navbar"
 
 const BlogDetail = ({ params }) => {
-  const { id } = use(params); // Desenrollar params usando React.use()
+  const { id } = params; // Desenrollar params usando React.use()
 
   const [entry, setEntry] = useState(null);
   const [assets, setAssets] = useState({});
