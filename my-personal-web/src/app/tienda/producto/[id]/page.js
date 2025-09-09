@@ -7,8 +7,7 @@ import CheckoutButton from "@/app/components/CheckoutButton";
 
 export default function ProductPage(props) {
   // Desenvuelve los params correctamente en Next.js 15+
-  const resolvedParams = React.use(props.params);
-  const { id } = resolvedParams;
+  const { id } = props.params;
 
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState(null);
@@ -41,7 +40,7 @@ export default function ProductPage(props) {
     const createPreference = async () => {
       try {
         const baseUrl = window.location.hostname.includes("localhost")
-          ? "http://localhost:3000"
+          ? "http://localhost:3001"
           : window.location.origin;
 
         const res = await fetch(`${baseUrl}/api/create-preference`, {

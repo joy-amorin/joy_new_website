@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { getProducts } from "@/data/products";
 import Navbar from "@/app/components/Navbar";
 
+// Componente principal que envuelve en Suspense
 export default function SuccessPage() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SuccessContent />
+    </Suspense>
+  );
+}
+
+// Contenido con useSearchParams
+function SuccessContent() {
   const searchParams = useSearchParams();
   const slug = searchParams.get("slug");
   const paymentStatus = searchParams.get("status"); // viene de Mercado Pago
@@ -95,5 +105,14 @@ export default function SuccessPage() {
       </main>
       <Navbar />
     </>
+  );
+}
+
+// Loader de fallback mientras carga useSearchParams
+function Loading() {
+  return (
+    <main className="p-8 text-center">
+      <h1 className="text-2xl">⏳ Cargando detalles de la compra...</h1>
+    </main>
   );
 }
