@@ -5,7 +5,7 @@ import { getProducts } from "@/data/products";
 
 // Inicializar cliente Mercado Pago
 const client = new MercadoPagoConfig({
-  accessToken: process.env.MP_TEST_ACCESS_TOKEN,
+  accessToken: process.env.MP_ACCESS_TOKEN,
 });
 
 export async function POST(request) {
@@ -55,7 +55,7 @@ export async function POST(request) {
     // Retornar IDs y link de sandbox al frontend
     return NextResponse.json({
       preferenceId: response.id,
-      sandboxInitPoint: response.sandbox_init_point,
+      initPoint: response.init_point,
     });
   } catch (error) {
     console.error("Error en create-preference:", error);

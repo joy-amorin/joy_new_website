@@ -17,7 +17,7 @@ export default function CheckoutButton({ preferenceId }) {
 
       // Inicializar Mercado Pago con la public key
       const mp = new window.MercadoPago(
-        process.env.NEXT_PUBLIC_MP_TEST_PUBLIC_KEY,
+        process.env.NEXT_PUBLIC_MP_PUBLIC_KEY,
         { locale: "es-AR" }
       );
 
