@@ -6,7 +6,6 @@ import Navbar from "@/app/components/Navbar";
 import CheckoutButton from "@/app/components/CheckoutButton";
 
 export default function ProductPage(props) {
-  // Desenvuelve los params correctamente en Next.js 15+
   const { id } = props.params;
 
   const [products, setProducts] = useState([]);
@@ -75,7 +74,7 @@ export default function ProductPage(props) {
       <main className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32 mt-10">
         {/* Título y subtítulo */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-body text-foreground mb-4">
+          <h1 className="text-4xl text-center text-foreground font-body mb-10 mt-14">
             {product.title}
           </h1>
           <p className="text-lg text-foreground/80 italic mb-6">
@@ -83,8 +82,9 @@ export default function ProductPage(props) {
           </p>
         </div>
 
-        {/* Imagen y detalles */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 mb-20">
+        {/* Imagen a la izquierda y características + botón a la derecha */}
+        <div className="flex flex-col md:flex-row items-start gap-12 mb-20">
+          {/* Imagen */}
           <div className="flex-shrink-0">
             <img
               src={product.image}
@@ -93,7 +93,24 @@ export default function ProductPage(props) {
             />
           </div>
 
-          <div className="font-body text-foreground">
+          {/* Características y botón */}
+          <div className="flex flex-col flex-1">
+            {/* Características */}
+            {product.features && product.features.length > 0 && (
+              <div className="mb-6">
+                <h2 className="text-2xl font-body mb-4">Lo que encontrarás dentro:</h2>
+                <div className="grid grid-cols-1 gap-3">
+                  {product.features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <span className="text-green-600 font-body text-xl">✓</span>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Precio */}
             <p className="mb-4 text-2xl font-foreground">{product.price} USD</p>
 
             {/* Botón de compra */}

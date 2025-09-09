@@ -45,7 +45,7 @@ export default function TiendaPage() {
                 alt={product.title}
                 className="w-full max-w-[12rem] h-auto object-contain mb-4 rounded"
               />
-              <h2 className="text-xl text-foreground font-body mb-2 line-clamp-2"></h2>
+              <h2 className="text-xl text-foreground font-body mb-2 line-clamp-1">{product.title}</h2>
               <p className="text-foreground font-body mb-4">{product.description || ''}</p>
               <span className="text-lg font-body text-foreground mb-4">{product.price} USD</span>
 
