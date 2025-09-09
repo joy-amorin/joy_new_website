@@ -36,6 +36,10 @@ export async function GET(req) {
       headers: {
         "Content-Type": "application/pdf", // o "application/octet-stream"
         "Content-Disposition": `attachment; filename="${product.slug}.pdf"`,
+         // cabeceras anti-cacheo
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
       },
     });
   } catch (error) {
