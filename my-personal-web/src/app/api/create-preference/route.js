@@ -45,6 +45,11 @@ export async function POST(request) {
         },
         auto_return: "approved",
         notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications`, // webhook
+
+        // Agregar un payer genérico para habilitar el botón de pago
+        payer: {
+          email: "payer@example.com",
+        },
       },
     });
 
@@ -58,17 +63,12 @@ export async function POST(request) {
     console.log("Currency:", response.items.map(i => i.currency_id).join(", "));
     console.log("===================================");
 
-// Retornar solo lo que el frontend necesita
-return NextResponse.json({
-  preferenceId: response.id,
-  initPoint: response.init_point, // esto es lo que debe usar el botón
-});
-
-    // Retornar IDs y link de sandbox al frontend
+    // Retornar solo lo que el frontend necesita
     return NextResponse.json({
       preferenceId: response.id,
-      initPoint: response.init_point,
+      initPoint: response.init_point, // esto es lo que debe usar el botón
     });
+
   } catch (error) {
     console.error("Error en create-preference:", error);
     return NextResponse.json(
