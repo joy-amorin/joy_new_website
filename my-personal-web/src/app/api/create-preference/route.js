@@ -45,11 +45,7 @@ export async function POST(request) {
         },
         auto_return: "approved",
         notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications`, // webhook
-
-        // Agregar un payer genérico para habilitar el botón de pago
-        payer: {
-          email: "payer@example.com",
-        },
+      
       },
     });
 

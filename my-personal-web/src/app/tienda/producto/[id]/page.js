@@ -39,7 +39,7 @@ export default function ProductPage(props) {
     const createPreference = async () => {
       try {
         const baseUrl = window.location.hostname.includes("localhost")
-          ? "http://localhost:3001"
+          ? "http://localhost:3000"
           : window.location.origin;
 
         const res = await fetch(`${baseUrl}/api/create-preference`, {
