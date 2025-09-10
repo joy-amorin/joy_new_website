@@ -10,8 +10,8 @@ export async function getProducts() {
 
   // Mapa de precios por producto
   const precios = {
-    "aprendizaje-musical-funcional-guia-para-autodidactas": 0.125,
-    "cuaderno-digital-tu-plan-musical": 7.99,
+    "aprendizaje-musical-funcional-guia-para-autodidactas": 0.05,
+    "cuaderno-digital-tu-plan-musical": 5.99,
   };
 
   // Características específicas por producto

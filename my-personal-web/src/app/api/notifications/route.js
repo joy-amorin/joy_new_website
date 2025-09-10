@@ -14,11 +14,11 @@ export async function POST(req) {
 
     console.log("🔔 Webhook recibido de Mercado Pago:", JSON.stringify(body, null, 2));
 
-    // Solo procesamos pagos
+    // Solo procesar pagos
     if (body.type === "payment") {
       const paymentId = body.data.id;
 
-      // Consultamos la API para confirmar el estado
+      // Consultar la API para confirmar el estado
       const payment = new Payment(client);
       const result = await payment.get({ id: paymentId });
 
@@ -29,10 +29,8 @@ export async function POST(req) {
 
         // Generar token JWT temporal para descarga
         const slug = result.external_reference || result.preference_id; 
-        // Si tienes el slug del producto en external_reference, úsalo; si no, puedes usar preference_id
         const token = generateToken(slug);
 
-        // Devuelve token en la respuesta para que tu front lo use si quieres
         return NextResponse.json({
           status: "approved",
           productSlug: slug,
