@@ -49,8 +49,20 @@ export async function POST(request) {
     });
 
     // Logs para debug
-    console.log("Preference creada (modo prueba):", response);
+    console.log("===== Mercado Pago Preference =====");
+    console.log("Preference ID:", response.id);
+    console.log("Init point (producción):", response.init_point);
     console.log("Sandbox init point:", response.sandbox_init_point);
+    console.log("Back URLs:", response.back_urls);
+    console.log("Items:", response.items);
+    console.log("Currency:", response.items.map(i => i.currency_id).join(", "));
+    console.log("===================================");
+
+// Retornar solo lo que el frontend necesita
+return NextResponse.json({
+  preferenceId: response.id,
+  initPoint: response.init_point, // esto es lo que debe usar el botón
+});
 
     // Retornar IDs y link de sandbox al frontend
     return NextResponse.json({
