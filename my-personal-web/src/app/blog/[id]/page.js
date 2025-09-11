@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect } from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/layout/Navbar"
 
 const BlogDetail = ({ params }) => {
   const { id } = params; // Desenrollar params usando React.use()

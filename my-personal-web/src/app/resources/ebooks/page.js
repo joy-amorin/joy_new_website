@@ -1,7 +1,7 @@
 "use client";
 
-import Navbar from '../../components/Navbar';
-import NewsletterForm from '@/app/components/NewsletterForm';
+import Navbar from '../../components/layout/Navbar';
+import NewsletterForm from '@/app/components/layout/NewsletterForm';
 import { resources } from '@/data/resources';
 
 const EbookLanding = () => {

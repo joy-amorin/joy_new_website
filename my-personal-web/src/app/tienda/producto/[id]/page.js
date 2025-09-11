@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { getProducts } from "@/data/products";
-import Navbar from "@/app/components/Navbar";
-import CheckoutButton from "@/app/components/CheckoutButton";
+import Navbar from "@/app/components/layout/Navbar";
+import CheckoutButton from "@/app/components/tienda/CheckoutButton";
 
 export default function ProductPage(props) {
   const { id } = props.params;
