@@ -51,7 +51,7 @@ export default function TiendaPage() {
 
               <Link href={`/tienda/producto/${product.slug}`}>
                 <button className="bg-primary text-foreground px-4 py-2 rounded hover:bg-opacity-90 transition">
-                  Comprar
+                  Ver producto
                 </button>
               </Link>
             </div>
