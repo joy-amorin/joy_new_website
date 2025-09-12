@@ -19,7 +19,7 @@ This repository contains the source code for my personal website, where I share 
 
 1. Clone th repository:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/username/repository-name.git
 
 2. Install dependencies:
 npm install
