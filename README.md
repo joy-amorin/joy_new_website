@@ -70,6 +70,7 @@ Example:
    init_point: response.init_point // Production checkout link
 
 Webhook notifications are configured with:
+
     ```bash
     notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications
 
