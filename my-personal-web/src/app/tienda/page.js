@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { getProducts } from '@/data/products';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/layout/Navbar';
 import Link from 'next/link';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/contact/ContactForm';
 
 
 export default function TiendaPage() {
@@ -27,7 +27,7 @@ export default function TiendaPage() {
   }, []);
 
   if (loading) {
-    return <p className="text-center mt-20 text-lg">Cargando productos...</p>;
+    return <p className="text-center text-foreground mt-20 text-lg">Cargando productos...</p>;
   }
 
   return (

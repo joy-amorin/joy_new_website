@@ -19,7 +19,7 @@ This repository contains the source code for my personal website, where I share 
 
 1. Clone th repository:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/username/repository-name.git
 
 2. Install dependencies:
 npm install
@@ -60,3 +60,37 @@ Cloudflare R2 is used to efficiently store and serve the e-books. Below are the 
 - After uploading, copy the public URL provided for each file.
 - Use these links to serve the e-books on your website or distribute them.
 
+## Mercado Pago Integration
+
+Mercado Pago is integrated to allow secure payments for digital products. The setup supports both sandbox (test) and production modes.
+1. Backend Flow
+The backend uses MP_ACCESS_TOKEN (server-side) to create payment preferences.
+Example:
+   ```bash
+   init_point: response.init_point // Production checkout link
+
+Webhook notifications are configured with:
+    ```bash
+    notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications
+
+2. Frontend Flow
+The frontend uses NEXT_PUBLIC_MP_PUBLIC_KEY to initialize checkout.
+Users complete payment on Mercado Pago’s hosted checkout page.
+After payment, users are redirected back to:
+   ```bash
+   /tienda/success?slug=product-slug
+
+At the same time, the webhook updates the backend with payment status to unlock the download.
+
+3. Sandbox vs Production
+- Sandbox: use test credentials and cards with sandbox_init_point.
+- Production: use real credentials with init_point for real payments.
+
+### Deployment with Vercel
+
+1. Push changes to GitHub.
+2. Add environment variables in Vercel Dashboard → Project Settings → Environment Variables.
+3. Deploy production build:
+
+   ```bash
+   vercel --prod

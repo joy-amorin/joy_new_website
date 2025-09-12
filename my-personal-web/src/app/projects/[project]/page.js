@@ -1,9 +1,9 @@
 "use client"
 
 import { usePathname } from 'next/navigation';
-import Cuantica from '../../components/Cuantica';
-import ElAsilo from '../../components/ElAsilo';
-import Navbar from '../../components/Navbar';
+import Cuantica from '../../components/projects/Cuantica';
+import ElAsilo from '../../components/projects/ElAsilo';
+import Navbar from '../../components/layout/Navbar';
 import { useEffect, useState } from 'react';
 
 const ProjectPage = () => {

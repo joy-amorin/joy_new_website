@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { getProducts } from "@/data/products";
-import Navbar from "@/app/components/Navbar";
-import CheckoutButton from "@/app/components/CheckoutButton";
+import Navbar from "@/app/components/layout/Navbar";
+import CheckoutButton from "@/app/components/tienda/CheckoutButton";
 
 export default function ProductPage(props) {
   const { id } = props.params;
@@ -60,7 +60,7 @@ export default function ProductPage(props) {
 
   if (!product) {
     return (
-      <main className="p-8 max-w-4xl mx-auto text-center">
+      <main className="p-8 max-w-4xl text-foreground mx-auto text-center">
         <h1 className="text-3xl text-foreground font-body mb-4">
           Buscando producto
         </h1>

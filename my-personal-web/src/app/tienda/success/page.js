@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { getProducts } from "@/data/products";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/components/layout/Navbar";
 
 // Componente principal que envuelve en Suspense
 export default function SuccessPage() {

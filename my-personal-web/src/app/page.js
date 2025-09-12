@@ -1,9 +1,9 @@
-import Navbar from "./components/Navbar";
-import JoyHome from "./components/JoyHome";
-import About from "./components/About"
-import Projects from "./components/Projects"
-import Blog from "./components/Blog"
-import Footer from "./components/Footer";
+import Navbar from "./components/layout/Navbar";
+import JoyHome from "./components/home/JoyHome";
+import About from "./components/home/About"
+import Projects from "./components/projects/Projects"
+import Blog from "./components/blog/Blog"
+import Footer from "./components/layout/Footer";
 
 export default function Home() {
   return (
