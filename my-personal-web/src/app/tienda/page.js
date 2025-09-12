@@ -27,7 +27,7 @@ export default function TiendaPage() {
   }, []);
 
   if (loading) {
-    return <p className="text-center mt-20 text-lg">Cargando productos...</p>;
+    return <p className="text-center text-foreground mt-20 text-lg">Cargando productos...</p>;
   }
 
   return (
