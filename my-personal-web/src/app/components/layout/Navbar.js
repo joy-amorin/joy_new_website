@@ -154,16 +154,7 @@ export default function Navbar() {
                   Recursos
                 </a>
               </li>
-              <li>
-                  <Link
-                  href="/tienda"
-                  className="block py-2 hover:text-primary"
-                  onClick={() => setIsDropdownOpen(false)} // Cerramos el menú
-                    >
-                    Tienda
-                  </Link>
-              </li>
-                <AnimatePresence>
+                  <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.ul
                     initial={{ opacity: 0, y: -10 }}
@@ -174,7 +165,7 @@ export default function Navbar() {
                   >
                     <li>
                       <a
-                        href="/ebooks"
+                        href="/resources/ebooks"
                         className="block py-2 hover:text-primary"
                         onClick={() => handleNavClick("ebooks")}
                       >
@@ -184,6 +175,16 @@ export default function Navbar() {
                   </motion.ul>
                 )}
               </AnimatePresence>
+              <li>
+                  <Link
+                  href="/tienda"
+                  className="block py-2 hover:text-primary"
+                  onClick={() => setIsDropdownOpen(false)} // Cerrar el menú
+                    >
+                    Tienda
+                  </Link>
+              </li>
+            
               <li>
                 <a
                   href="/#contacto"
