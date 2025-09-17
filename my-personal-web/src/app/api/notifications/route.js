@@ -28,12 +28,12 @@ export async function POST(req) {
         console.log("✅ Pago aprobado:", result.id, "Email comprador:", result.payer?.email);
 
         // Generar token JWT temporal para descarga
-        const slug = result.external_reference || result.preference_id; 
-        const token = generateToken(slug);
+        const external_reference = result.external_reference; 
+        const token = generateToken(external_reference);
 
         return NextResponse.json({
           status: "approved",
-          productSlug: slug,
+          orderId: external_reference,
           token,
         });
       } else {
