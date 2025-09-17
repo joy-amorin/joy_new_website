@@ -26,7 +26,8 @@ export async function getProducts() {
       "Perfil del estudiante: Identifica tu estilo de aprendizaje único",
       "Plantillas para metas SMART: Espacios estructurados para definir objetivos claros",
       "Ejercicios de enfoque: Aprende a concentrarte en el proceso, no solo en los resultados",
-      "Ejemplos aplicados: Casos prácticos para diferentes tipos de objetivos musicales"
+      "Ejemplos aplicados: Casos prácticos para diferentes tipos de objetivos musicales",
+      "Editable desde cualquier dispositivo: adapta tus metas a medida que progresas" 
     ]
   };
 
