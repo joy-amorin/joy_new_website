@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import { getProducts } from "@/data/products";
-
+import { v4 as uuidv4 } from "uuid"
 // Inicializar cliente Mercado Pago
 const client = new MercadoPagoConfig({
   accessToken: process.env.MP_ACCESS_TOKEN,
@@ -25,6 +25,9 @@ export async function POST(request) {
       );
     }
 
+    // crear identificador único por transacción
+    const uniqueId = uuidv4()
+
     // Crear la preferencia de pago
     const preference = new Preference(client);
 
@@ -44,15 +47,18 @@ export async function POST(request) {
           pending: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/`,
         },
         auto_return: "approved",
-        notification_url: `${process.env.NEXT_PUBLIC_SITE_URL}/api/notifications`, // webhook
+        success: `${process.env.NEXT_PUBLIC_SITE_URL}/tienda/success?slug=${slug}`, // webhook
+
+        external_reference: uniqueId
       
       },
     });
 
-    // Retornar solo lo que el frontend necesita
+    // Retornar los datos al frontend
     return NextResponse.json({
       preferenceId: response.id,
       initPoint: response.init_point, //lo que debe usar el botón
+      external_reference: uniqueId
     });
 
   } catch (error) {
