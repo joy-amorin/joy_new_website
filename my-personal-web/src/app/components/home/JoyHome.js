@@ -75,22 +75,18 @@ const SectionInicio = () => {
             
             {/* Nombre */}
             <div className="space-y-3">
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-logo font-black tracking-[-0.02em] leading-none">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-logo font-black tracking-[-0.02em] leading-none">
                 JOY
               </h1>
-              <h2 className="text-7xl md:text-8xl lg:text-9xl font-logo font-black tracking-[-0.02em] leading-none">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-logo font-black tracking-[-0.02em] leading-none">
                 AMORIN
               </h2>
             </div>
 
             {/* Descripción con palabras clave resaltadas */}
-            <p className="text-base lg:text-lg text-gray-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
-              <span>Musica autodidacta. </span>
-              <span className="text-[#9340ff] font-semibold">Producción musical.</span><br/>
-              <span>Proyectos, </span>
-              <span className="text-[#9340ff] font-semibold">recursos</span> 
-              <span> y contenido original.</span>
-            </p>
+                <p className="text-xs md:text-sm text-purple-400 uppercase tracking-[0.3em]">
+                  Música • Producción • Creadora digital
+                </p>
 
             {/* Símbolo infinito animado */}
             <div className="-mt-6 lg:-mt-8 xl:-mt-6">
