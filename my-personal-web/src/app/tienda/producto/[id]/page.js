@@ -68,8 +68,8 @@ export default function ProductPage(props) {
 
   return (
     <>
-      <main className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8 mt-10">
-        <div className="max-w-5xl mx-auto"> {/* 👈 mismo cambio */}
+      <main className="min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-foreground py-16 px-4 md:px-8 mt-10">
+        <div className="max-w-5xl mx-auto">
           {/* Título y subtítulo */}
           <div className="text-center mb-12">
             <h1 className="text-4xl text-center text-foreground font-body mb-10 mt-14">

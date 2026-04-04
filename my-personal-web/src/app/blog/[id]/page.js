@@ -115,7 +115,7 @@ const BlogDetail = ({ params }) => {
 
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8">
+      <div className="min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-foreground py-16 px-4 md:px-8">
         {entry ? (
           <div className="max-w-6xl mx-auto"> {/* 👈 contiene todo el contenido */}
             <img

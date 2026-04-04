@@ -19,8 +19,8 @@ const EbookLanding = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto"> {/* 👈 mismo cambio */}
+      <div className="min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-foreground py-16 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
           <h1 className="text-center text-4xl font-body mt-10 mb-4">Mini guía de práctica musical</h1>
           <p className="text-center text-lg mb-10 italic text-muted-foreground">
             Tu sistema de objetivos claros

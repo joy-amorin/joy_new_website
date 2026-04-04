@@ -22,7 +22,7 @@ const SectionInicio = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-background text-white overflow-hidden flex items-center pt-24 md:pt-28 xl:pt-32 2xl:pt-0">
+    <section className="relative min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-white overflow-hidden flex items-center pt-24 md:pt-28 xl:pt-32 2xl:pt-0">
       
       {/* Elementos de fondo flotantes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
