@@ -12,7 +12,6 @@ export default function ProductPage(props) {
   const [product, setProduct] = useState(null);
   const [preferenceId, setPreferenceId] = useState(null);
 
-  // Fetch de productos dinámico
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -25,14 +24,12 @@ export default function ProductPage(props) {
     fetchProducts();
   }, []);
 
-  // Busca el producto según el id del URL
   useEffect(() => {
     if (products.length === 0) return;
     const found = products.find((p) => p.id === id);
     setProduct(found);
   }, [products, id]);
 
-  // Crea la preferencia de Mercado Pago
   useEffect(() => {
     if (!product) return;
 
@@ -71,68 +68,72 @@ export default function ProductPage(props) {
 
   return (
     <>
-      <main className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32 mt-10">
-        {/* Título y subtítulo */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl text-center text-foreground font-body mb-10 mt-14">
-            {product.title}
-          </h1>
-          <p className="text-lg text-foreground/80 italic mb-6">
-            {product.description}
-          </p>
-        </div>
-
-        {/* Imagen a la izquierda y características + botón a la derecha */}
-        <div className="flex flex-col md:flex-row items-start gap-12 mb-20">
-          {/* Imagen */}
-          <div className="flex-shrink-0">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="max-w-xs w-full h-auto object-contain rounded-xl shadow-lg"
-            />
+      <main className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8 mt-10">
+        <div className="max-w-5xl mx-auto"> {/* 👈 mismo cambio */}
+          {/* Título y subtítulo */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl text-center text-foreground font-body mb-10 mt-14">
+              {product.title}
+            </h1>
+            <p className="text-lg text-foreground/80 italic mb-6">
+              {product.description}
+            </p>
           </div>
 
-          {/* Características y botón */}
-          <div className="flex flex-col flex-1">
-            {/* Características */}
-            {product.features && product.features.length > 0 && (
-              <div className="mb-6">
-                <h2 className="text-2xl font-body mb-4">Lo que encontrarás dentro:</h2>
-                <div className="grid grid-cols-1 gap-3">
-                  {product.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <span className="text-green-600 font-body text-xl">✓</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+          {/* Imagen a la izquierda y características + botón a la derecha */}
+          <div className="flex flex-col md:flex-row items-start gap-12 mb-20">
+            {/* Imagen */}
+            <div className="flex-shrink-0">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="max-w-xs w-full h-auto object-contain rounded-xl shadow-lg"
+              />
+            </div>
+
+            {/* Características y botón */}
+            <div className="flex flex-col flex-1">
+              {/* Características */}
+              {product.features && product.features.length > 0 && (
+                <div className="mb-6">
+                  <h2 className="text-2xl font-body mb-4">Lo que encontrarás dentro:</h2>
+                  <div className="grid grid-cols-1 gap-3">
+                    {product.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <span className="text-green-600 font-body text-xl">✓</span>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              )}
+
+              {/* Precio */}
+              <p className="mb-4 text-2xl font-foreground">{product.price} USD</p>
+
+              {/* Botón de compra */}
+              {preferenceId ? (
+                <div className="w-full md:w-fit"> {/* 👈 limita el ancho del botón en pantallas grandes */}
+                  <CheckoutButton preferenceId={preferenceId} />
+                </div>
+              ) : (
+                <button
+                  className="bg-primary text-foreground px-6 py-2 rounded hover:bg-primary-dark transition text-lg font-body w-full md:w-fit"
+                  disabled
+                >
+                  Procesando...
+                </button>
+              )}
+
+              {/* Enlace para volver a la tienda */}
+              <div className="mt-6">
+                <a
+                  href="/tienda"
+                  className="text-primary hover:underline font-body"
+                >
+                  ← Volver a la tienda
+                </a>
               </div>
-            )}
-
-            {/* Precio */}
-            <p className="mb-4 text-2xl font-foreground">{product.price} USD</p>
-
-            {/* Botón de compra */}
-            {preferenceId ? (
-              <CheckoutButton preferenceId={preferenceId} />
-            ) : (
-              <button
-                className="bg-primary text-foreground px-6 py-2 rounded hover:bg-primary-dark transition text-lg font-body w-full md:w-auto"
-                disabled
-              >
-                Procesando...
-              </button>
-            )}
-
-            {/* Enlace para volver a la tienda */}
-            <div className="mt-6">
-              <a
-                href="/tienda"
-                className="text-primary hover:underline font-body"
-              >
-                ← Volver a la tienda
-              </a>
             </div>
           </div>
         </div>

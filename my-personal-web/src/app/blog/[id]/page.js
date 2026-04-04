@@ -117,7 +117,7 @@ const BlogDetail = ({ params }) => {
     <>
       <div className="min-h-screen bg-background text-foreground py-16 px-4 md:px-8">
         {entry ? (
-          <div className="max-w-5xl mx-auto"> {/* 👈 contiene todo el contenido */}
+          <div className="max-w-6xl mx-auto"> {/* 👈 contiene todo el contenido */}
             <img
               src={assets[entry.fields.blogImage?.sys?.id]}
               alt={entry.fields.blogImage?.fields?.title || "Imagen de blog"}
