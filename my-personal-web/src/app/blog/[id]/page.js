@@ -5,7 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Navbar from "../../components/layout/Navbar"
 
 const BlogDetail = ({ params }) => {
-  const { id } = params; // Desenrollar params usando React.use()
+  const { id } = params;
 
   const [entry, setEntry] = useState(null);
   const [assets, setAssets] = useState({});
@@ -18,12 +18,10 @@ const BlogDetail = ({ params }) => {
       const environmentId = "master";
       const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
-      // Obtener detalles de la entrada con Contentful
       const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environmentId}/entries/${id}?access_token=${accessToken}`;
       const response = await fetch(url);
       const data = await response.json();
 
-      // Obtener los assets
       const imageId = data.fields.blogImage?.sys?.id;
       if (imageId) {
         const assetUrl = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environmentId}/assets?access_token=${accessToken}&sys.id[in]=${imageId}`;
@@ -35,13 +33,12 @@ const BlogDetail = ({ params }) => {
         }, {}));
       }
 
-      setEntry(data); // Guardar la entrada
+      setEntry(data);
     };
 
     fetchEntry();
   }, [id]);
 
-  // función para ver la estructura de los datos
   const logContentStructure = (content) => {
     console.log('Estructura del contenido:', JSON.stringify(content, null, 2));
   };
@@ -66,12 +63,11 @@ const BlogDetail = ({ params }) => {
         return <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-blue-500">{linkText}</a>;
       },
       'paragraph': (node) => {
-        logContentStructure(node); // ver estructura de los nodos del párrafo
+        logContentStructure(node);
         return (
           <p className="mb-4 text-base">
             {node.content.map((content, index) => {
               if (content.nodeType === 'hyperlink') {
-                // si el nodo es un hipervínculo
                 return (
                   <a
                     key={index}
@@ -84,78 +80,48 @@ const BlogDetail = ({ params }) => {
                   </a>
                 );
               } else {
-                  // si no es un hipervínculo mostrar el contenido normal
                 return <span key={index}>{content.value}</span>;
               }
             })}
           </p>
         );
       },
-
-      'heading-1': (node) => {
-        return <h1 className="text-4xl font-bold mb-4">{node.content[0].value}</h1>;
-      },
-      'heading-2': (node) => {
-        return <h2 className="text-3xl font-semibold mb-4">{node.content[0].value}</h2>;
-      },
-      'heading-3': (node) => {
-        return <h3 className="text-2xl font-semibold mb-4">{node.content[0].value}</h3>;
-      },
-      'heading-4': (node) => {
-        return <h4 className="text-xl font-semibold mb-4">{node.content[0].value}</h4>;
-      },
-      'unordered-list': (node) => {
-        return (
-          <ul className="list-disc pl-6 mb-4">
-            {node.content.map((item, index) => {
-              if (item.content && item.content[0]?.nodeType === 'paragraph') {
-                return (
-                  <li key={index} className="mb-2">
-                    {item.content[0].content[0]?.value}
-                  </li>
-                );
-              }
-              return (
-                <li key={index} className="mb-2">
-                  Sin texto disponible
-                </li>
-              );
-            })}
-          </ul>
-        );
-      },
-      'ordered-list': (node) => {
-        return (
-          <ol className="list-decimal pl-6 mb-4">
-            {node.content.map((item, index) => {
-              if (item.nodeType === 'paragraph' && item.content && item.content[0]?.value) {
-                return (
-                  <li key={index} className="mb-2">
-                    {item.content[0]?.value}
-                  </li>
-                );
-              }
-              return (
-                <li key={index} className="mb-2">
-                  Sin texto disponible
-                </li>
-              );
-            })}
-          </ol>
-        );
-      },
+      'heading-1': (node) => <h1 className="text-4xl font-bold mb-4">{node.content[0].value}</h1>,
+      'heading-2': (node) => <h2 className="text-3xl font-semibold mb-4">{node.content[0].value}</h2>,
+      'heading-3': (node) => <h3 className="text-2xl font-semibold mb-4">{node.content[0].value}</h3>,
+      'heading-4': (node) => <h4 className="text-xl font-semibold mb-4">{node.content[0].value}</h4>,
+      'unordered-list': (node) => (
+        <ul className="list-disc pl-6 mb-4">
+          {node.content.map((item, index) => {
+            if (item.content && item.content[0]?.nodeType === 'paragraph') {
+              return <li key={index} className="mb-2">{item.content[0].content[0]?.value}</li>;
+            }
+            return <li key={index} className="mb-2">Sin texto disponible</li>;
+          })}
+        </ul>
+      ),
+      'ordered-list': (node) => (
+        <ol className="list-decimal pl-6 mb-4">
+          {node.content.map((item, index) => {
+            if (item.nodeType === 'paragraph' && item.content && item.content[0]?.value) {
+              return <li key={index} className="mb-2">{item.content[0]?.value}</li>;
+            }
+            return <li key={index} className="mb-2">Sin texto disponible</li>;
+          })}
+        </ol>
+      ),
     },
   };
 
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground py-16 px-8 md:px-16 lg:px-32">
+      <div className="min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-foreground py-16 px-4 md:px-8">
         {entry ? (
-          <div>
+          <div className="max-w-6xl mx-auto"> {/* 👈 contiene todo el contenido */}
             <img
               src={assets[entry.fields.blogImage?.sys?.id]}
               alt={entry.fields.blogImage?.fields?.title || "Imagen de blog"}
-              className="w-full mb-8 md:w-3/4 lg:w-1/2 mx-auto rounded-lg mt-10"
+              className="w-full max-h-72 object-cover rounded-lg mt-10 mb-8" // 👈 altura máxima + object-cover
             />
             <h1 className="text-4xl font-body mb-6 text-center">{entry.fields.blogTitle}</h1>
             <div>
