@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 
 const SectionProjects = () => {
@@ -50,7 +51,7 @@ const SectionProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 max-w-4xl mx-auto">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div 
               key={project.id}
               className="group relative cursor-pointer"
@@ -58,21 +59,19 @@ const SectionProjects = () => {
             >
               {/* Decorative Frame */}
               <div className="absolute -inset-3 border-l border-t border-purple-500/20 group-hover:border-purple-500/40 transition-all duration-300"></div>
-              <div className="absolute -inset-3 border-r border-b border-fuchsia-500/20 group-hover:border-fuchsia-500/40 translate-x-3 translate-y-3 transition-all duration-300"></div>
+              <div className="absolute -inset-3 border-r border-b border-fuchsia-500/20 group-hover:border-fuchsia-500/40  transition-all duration-300"></div>
               
               {/* Card Container */}
               <div className="relative bg-gray-900/50 overflow-hidden">
                 
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-110"
                   />
-                  
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                   
                   {/* Corner Accents */}
                   <div className={`absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 ${project.color === 'purple' ? 'border-purple-500' : 'border-fuchsia-500'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -90,11 +89,6 @@ const SectionProjects = () => {
 
                 {/* Content */}
                 <div className="relative p-4 md:p-6">
-                  
-                  {/* Project Number */}
-                  <div className="absolute top-0 right-0 -translate-y-1/2 bg-black border-2 border-purple-500 px-3 py-1 text-xs font-bold uppercase tracking-wider">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
 
                   {/* Title */}
                   <h3 className={`text-lg md:text-xl lg:text-2xl font-bold mb-2 group-hover:${project.color === 'purple' ? 'text-purple-400' : 'text-fuchsia-400'} transition-colors duration-300`}>
@@ -122,12 +116,6 @@ const SectionProjects = () => {
           ))}
         </div>
 
-        {/* Bottom Note */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm md:text-base">
-            Más proyectos próximamente...
-          </p>
-        </div>
       </div>
     </section>
   );
