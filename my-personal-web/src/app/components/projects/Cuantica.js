@@ -14,8 +14,9 @@ const SectionCuntica = () => {
     "/cuantica-fotos/florencio-sanchez-2.jpg",
     "/cuantica-fotos/goes-3.jpg",
     "/cuantica-fotos/goes-2.jpg",
+    "/cuantica-fotos/goes-4.jpg",
     "/cuantica-fotos/sitarroza-1.jpg",
-    "/cuantica-fotos/goes-2.jpg",
+    "/cuantica-fotos/fiesta-del-rio-3.jpg",
   ];
 
   const handlePrev = () => {
@@ -171,7 +172,6 @@ const SectionCuntica = () => {
       </div>
 
       {/* Lightbox */}
-       {/* Lightbox */}
       {selectedPhoto !== null && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
