@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SectionCuntica = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -26,6 +26,18 @@ const SectionCuntica = () => {
   const handleNext = () => {
     setSelectedPhoto((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
   };
+
+  // Navegación con teclado
+    useEffect(() => {
+      const handleKeyDown = (e) => {
+        if (selectedPhoto === null) return;
+        if (e.key === "ArrowLeft") handlePrev();
+        if (e.key === "ArrowRight") handleNext();
+        if (e.key === "Escape") setSelectedPhoto(null);
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [selectedPhoto]);
 
   return (
     <section id="cuantica" className="min-h-screen bg-gradient-to-b from-black via-purple-950/10 to-black text-white py-16 px-4 md:px-8 lg:px-16">
@@ -170,7 +182,6 @@ const SectionCuntica = () => {
         </div>
 
       </div>
-
       {/* Lightbox */}
       {selectedPhoto !== null && (
         <div
