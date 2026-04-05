@@ -31,19 +31,19 @@ const SectionCuntica = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Foto + Texto */}
-        <div className="flex flex-col md:flex-row items-start justify-between md:gap-10">
-          <div className="flex-shrink-0 mb-8 md:mb-0 mt-20">
+        <div className="flex flex-col lg:flex-row items-start justify-between lg:gap-10">
+          <div className="flex-shrink-0 mb-8 lg:mb-0 mt-20 w-full lg:w-auto">
             <Image
               src="/cuantica.jpg"
               alt="cuantica"
               width={500}
               height={500}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-cover w-full lg:w-[500px]"
             />
           </div>
 
-          <div className="text-center md:text-left md:w-auto">
-            <h2 className="text-4xl font-body mb-4 mt-10">Cuántica</h2>
+          <div className="text-center lg:text-left w-full">
+            <h2 className="text-4xl font-body mb-4 mt-6 lg:mt-10">Cuántica</h2>
             <p className="mb-3">
               En 2017 fundé <em>Cuántica</em> junto al bajista Gastón Gómez, una banda de metal alternativo
               influenciada por grupos como Linkin Park, Papa Roach y Bring Me The Horizon. Me desempeñé
@@ -80,8 +80,28 @@ const SectionCuntica = () => {
             <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
           </div>
 
-          <div className="flex gap-3 h-[450px]">
-            {/* Foto grande */}
+          {/* Móvil y tablet: grid simple */}
+          <div className="grid grid-cols-2 gap-3 lg:hidden">
+            {photos.slice(0, 6).map((photo, index) => (
+              <div
+                key={index}
+                className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
+                onClick={() => setSelectedPhoto(index)}
+              >
+                <img
+                  src={photo}
+                  alt={`foto ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: foto grande + grid 2x2 */}
+          <div className="hidden lg:flex gap-3 h-[450px]">
             <div
               className="relative w-1/2 overflow-hidden rounded-lg group flex-shrink-0 cursor-pointer"
               onClick={() => setSelectedPhoto(0)}
@@ -96,7 +116,6 @@ const SectionCuntica = () => {
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
 
-            {/* Grid 2x2 */}
             <div className="grid grid-cols-2 grid-rows-2 gap-3 flex-1">
               {photos.slice(1, 5).map((photo, index) => (
                 <div
@@ -152,66 +171,74 @@ const SectionCuntica = () => {
       </div>
 
       {/* Lightbox */}
+       {/* Lightbox */}
       {selectedPhoto !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
           onClick={() => setSelectedPhoto(null)}
         >
+          {/* Imagen + botones laterales */}
           <div
-            className="relative max-w-4xl w-full mx-4"
+            className="relative max-w-4xl w-full mx-4 flex items-center gap-3"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={photos[selectedPhoto]}
-              alt="foto ampliada"
-              className="w-full max-h-[80vh] object-contain rounded-lg"
-            />
-
-            {/* Contador */}
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.2em] text-purple-400">
-              {selectedPhoto + 1} / {photos.length}
-            </div>
-
-            {/* Botón anterior */}
+            {/* Botón anterior — siempre visible en móvil */}
             <button
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 flex items-center justify-center border border-purple-500/50 text-purple-400 hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 rounded"
+              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-none"
               onClick={handlePrev}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            {/* Botón siguiente */}
+            {/* Imagen */}
+            <div className="relative flex-1">
+              <img
+                src={photos[selectedPhoto]}
+                alt="foto ampliada"
+                className="w-full max-h-[70vh] object-contain rounded-lg"
+              />
+
+              {/* Contador */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/50 px-3 py-1 rounded-full text-xs uppercase tracking-[0.2em] text-purple-400">
+                {selectedPhoto + 1} / {photos.length}
+              </div>
+
+              {/* Botón cerrar */}
+              <button
+                className="absolute -top-4 -right-4 w-8 h-8 flex items-center justify-center bg-black/70 border border-purple-500/50 text-gray-400 hover:text-white hover:border-purple-400 transition-all duration-300 rounded-full"
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Botón siguiente — siempre visible en móvil */}
             <button
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 flex items-center justify-center border border-purple-500/50 text-purple-400 hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 rounded"
+              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-none"
               onClick={handleNext}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Botón cerrar */}
-            <button
-              className="absolute -top-10 right-0 text-gray-400 hover:text-white transition-colors duration-300"
-              onClick={() => setSelectedPhoto(null)}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
 
           {/* Miniaturas */}
-          <div className="absolute bottom-6 flex gap-3">
+          <div
+            className="mt-6 flex gap-2 flex-wrap justify-center px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             {photos.map((photo, index) => (
               <div
                 key={index}
-                className={`w-14 h-14 overflow-hidden rounded cursor-pointer border-2 transition-all duration-300 ${
+                className={`w-12 h-12 overflow-hidden rounded cursor-pointer border-2 transition-all duration-300 ${
                   selectedPhoto === index ? 'border-purple-500' : 'border-transparent opacity-50 hover:opacity-100'
                 }`}
-                onClick={(e) => { e.stopPropagation(); setSelectedPhoto(index); }}
+                onClick={() => setSelectedPhoto(index)}
               >
                 <img src={photo} alt="" className="w-full h-full object-cover" />
               </div>
