@@ -7,11 +7,15 @@ const SectionCuntica = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const photos = [
-    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80",
-    "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
-    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80",
-    "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80",
-    "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "/cuantica-fotos/fiesta-del-rio-1.jpg",
+    "/cuantica-fotos/fiesta-del-rio-2.jpg",
+    "/cuantica-fotos/goes-1.jpg",
+    "/cuantica-fotos/sitarroza-2.jpg",
+    "/cuantica-fotos/florencio-sanchez-2.jpg",
+    "/cuantica-fotos/goes-3.jpg",
+    "/cuantica-fotos/goes-2.jpg",
+    "/cuantica-fotos/sitarroza-1.jpg",
+    "/cuantica-fotos/goes-2.jpg",
   ];
 
   const handlePrev = () => {
@@ -68,15 +72,15 @@ const SectionCuntica = () => {
           </div>
         </div>
 
-        {/* Fotos destacadas */}
+        {/* Galería */}
         <div className="mt-16">
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-            <span className="text-xs uppercase tracking-[0.3em] text-purple-400">Fotos destacadas</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-purple-400">Galería</span>
             <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
           </div>
 
-          <div className="flex gap-3 h-72">
+          <div className="flex gap-3 h-[450px]">
             {/* Foto grande */}
             <div
               className="relative w-1/2 overflow-hidden rounded-lg group flex-shrink-0 cursor-pointer"
@@ -94,7 +98,7 @@ const SectionCuntica = () => {
 
             {/* Grid 2x2 */}
             <div className="grid grid-cols-2 grid-rows-2 gap-3 flex-1">
-              {photos.slice(1).map((photo, index) => (
+              {photos.slice(1, 5).map((photo, index) => (
                 <div
                   key={index}
                   className="relative overflow-hidden rounded-lg group cursor-pointer"
