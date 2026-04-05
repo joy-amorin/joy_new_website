@@ -9,12 +9,12 @@ const SectionElAsilo = () => {
   const photos = [
     "/el-asilo-fotos/moors-1.jpg",
     "/el-asilo-fotos/indio-fest.jpg",
-    "/el-asilo-fotos/sitarroza-2.jpg",
+    "/el-asilo-fotos/zitarrosa-2.jpg",
     "/el-asilo-fotos/santa-rosa-1.jpg",
     "/el-asilo-fotos/rara-avis.jpg",
     "/el-asilo-fotos/rara-avis-banda.jpg",
     "/el-asilo-fotos/moors-3.jpg",
-    "/el-asilo-fotos/sitarroza-1.jpg",
+    "/el-asilo-fotos/zitarrosa-1.jpg",
     "/el-asilo-fotos/santa-rosa-full-band.jpg",
     "/el-asilo-fotos/rara-avis-publico.jpg",
   ];
@@ -70,10 +70,11 @@ const SectionElAsilo = () => {
               Pecho e' Fierro, y Flema (Arg.), entre otros.
             </p>
              <p className="mb-3">
-              Junto a la banda, participé en la grabación del sencillo “Enemigos”, en colaboración 
-              con Alejandro Spuntone, el cual cuenta con videoclip oficial. También realizamos una versión
-              de “Marinero de Luces”, original de José Luis Perales e interpretada por Isabel Pantoja, con 
-              un video de estética estilo “garage”.
+              Junto a la banda, participé en la grabación del sencillo “Enemigos”, lanzado en agosto 
+              de 2025 en colaboración con Alejandro Spuntone, el cual cuenta con videoclip oficial. 
+              En octubre de 2025, realizamos una versión de “Marinero de Luces”, original de José Luis 
+              Perales e interpretada por Isabel Pantoja, también acompañada de un video con estética 
+              estilo “garage”.
             </p>
              <p className="mb-3">
               En noviembre de 2025 presentamos Rara Avis, un espectáculo en la sala Hugo Balzo del Auditorio 
