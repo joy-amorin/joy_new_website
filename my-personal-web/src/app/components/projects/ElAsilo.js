@@ -12,6 +12,7 @@ const SectionElAsilo = () => {
     "/el-asilo-fotos/sitarroza-2.jpg",
     "/el-asilo-fotos/santa-rosa-1.jpg",
     "/el-asilo-fotos/rara-avis.jpg",
+    "/el-asilo-fotos/rara-avis-banda.jpg",
     "/el-asilo-fotos/moors-3.jpg",
     "/el-asilo-fotos/sitarroza-1.jpg",
     "/el-asilo-fotos/santa-rosa-full-band.jpg",
@@ -58,7 +59,7 @@ const SectionElAsilo = () => {
             <h2 className="text-4xl font-body mb-4 mt-6 lg:mt-10">El asilo de la bestia</h2>
             <p className="mb-3">
               El Asilo de la Bestia es una banda de hard rock/metal fundada en 2020,
-              en la que me uní como tecladista en mayo de 2024 y con la que continúo trabajando hasta la fecha.
+              en la que me uní como tecladista en junio de 2024 y con la que continúo trabajando hasta la fecha.
               Cuenta con un EP titulado <em>Epidemia</em> y un álbum de estudio, <em>Despertar</em>,
               nominado en 2024 a los Premios Graffiti como Mejor Álbum de Metal y Hard Rock.
             </p>
@@ -68,9 +69,19 @@ const SectionElAsilo = () => {
               con grupos destacados como NTVG, Buitres, La Triple Nelson, Rey Toro,
               Pecho e' Fierro, y Flema (Arg.), entre otros.
             </p>
+             <p className="mb-3">
+              Junto a la banda, participé en la grabación del sencillo “Enemigos”, en colaboración 
+              con Alejandro Spuntone, el cual cuenta con videoclip oficial. También realizamos una versión
+              de “Marinero de Luces”, original de José Luis Perales e interpretada por Isabel Pantoja, con 
+              un video de estética estilo “garage”.
+            </p>
+             <p className="mb-3">
+              En noviembre de 2025 presentamos Rara Avis, un espectáculo en la sala Hugo Balzo del Auditorio 
+              Nacional del Sodre, donde incorporamos instrumentos sinfónicos a la propuesta musical.
+            </p>
             <p>
-              Actualmente, estoy en el proceso de grabación del segundo disco de la banda y
-              tocando en las presentaciones en vivo como tecladista oficial.
+              Actualmente, nos encontramos en proceso de composición de nuevo material para un próximo disco, 
+              con una presentación prevista en La Trastienda el 12 de noviembre de 2026.
             </p>
           </div>
         </div>
@@ -219,7 +230,7 @@ const SectionElAsilo = () => {
           >
             {/* Botón anterior — siempre visible en móvil */}
             <button
-              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-full"
+              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-none"
               onClick={handlePrev}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,7 +264,7 @@ const SectionElAsilo = () => {
 
             {/* Botón siguiente — siempre visible en móvil */}
             <button
-              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-full"
+              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/70 border border-purple-500/70 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 transition-all duration-300 rounded-none"
               onClick={handleNext}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
