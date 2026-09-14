@@ -39,7 +39,7 @@ const SectionProjects = () => {
         
         {/* Section Title */}
         <div className="mb-12 lg:mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-body tracking-tight">
             Mis Proyectos
           </h2>
         </div>
