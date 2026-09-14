@@ -8,9 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#222222",
-        foreground: "#ffffff",
-        primary: "#9340ff",
+        background: "#000000",
+        foreground: "#F5F5F5",
+        primary: "#ffffff",
+        muted: "#A3A3A3",
+        surface: "#111111",
+        border: "#242424",
       },
       fontFamily: {
         logo: ["Megrim", "cursive"],

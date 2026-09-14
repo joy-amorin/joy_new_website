@@ -40,7 +40,7 @@ const SectionElAsilo = () => {
   }, [selectedPhoto]);
 
   return (
-    <section id="el-asilo" className="min-h-screen bg-gradient-to-b from-black via-purple-950/10 to-black text-white py-16 px-4 md:px-8 lg:px-16">
+    <section id="el-asilo" className="min-h-screen bg-background text-white py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Foto + Texto */}
@@ -80,19 +80,16 @@ const SectionElAsilo = () => {
               En noviembre de 2025 presentamos Rara Avis, un espectáculo en la sala Hugo Balzo del Auditorio 
               Nacional del Sodre, donde incorporamos instrumentos sinfónicos a la propuesta musical.
             </p>
-            <p>
-              Actualmente, nos encontramos en proceso de composición de nuevo material para un próximo disco, 
-              con una presentación prevista en La Trastienda el 12 de noviembre de 2026.
-            </p>
+
           </div>
         </div>
 
         {/* Galería */}
         <div className="mt-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-            <span className="text-xs uppercase tracking-[0.3em] text-purple-400">Galería</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
+            
+            <span className="text-xs uppercase tracking-[0.3em] text-foreground">Galería</span>
+
           </div>
 
           {/* Móvil y tablet: grid simple */}
@@ -155,9 +152,7 @@ const SectionElAsilo = () => {
         {/* Spotify */}
         <div className="mt-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-            <span className="text-xs uppercase tracking-[0.3em] text-purple-400">Escucha en Spotify</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
+            <span className="text-xs uppercase tracking-[0.3em] text-foreground">Escucha en Spotify</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <iframe
@@ -186,9 +181,7 @@ const SectionElAsilo = () => {
         {/* YouTube */}
         <div className="mt-12 mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-            <span className="text-xs uppercase tracking-[0.3em] text-purple-400">YouTube</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
+            <span className="text-xs uppercase tracking-[0.3em] text-foreground">YouTube</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="aspect-video">
