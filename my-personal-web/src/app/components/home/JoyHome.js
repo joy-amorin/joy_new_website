@@ -22,7 +22,7 @@ const SectionInicio = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black text-white overflow-hidden flex items-center pt-24 md:pt-28 xl:pt-32 2xl:pt-0">
+    <section className="relative min-h-screen inset-0 bg-background text-white overflow-hidden flex items-center pt-24 md:pt-28 xl:pt-32 2xl:pt-0">
       
       {/* Elementos de fondo flotantes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -50,10 +50,7 @@ const SectionInicio = () => {
               {/* Contenedor de imagen con halo tecnológico */}
               <div
                 className="relative w-full h-full overflow-hidden border-2 border-white/10"
-                style={{
-                  boxShadow: `0 0 30px 5px rgba(147,64,255,0.3)`,
-                  transition: 'box-shadow 0.3s ease'
-                }}
+                
               >
                 <Image
                   src="/home-fotos/hero-photo.png"
@@ -84,47 +81,12 @@ const SectionInicio = () => {
             </div>
 
             {/* Descripción con palabras clave resaltadas */}
-                <p className="text-xs md:text-sm text-purple-400 uppercase tracking-[0.3em]">
+                <p className="text-xs md:text-sm text-foreground uppercase tracking-[0.3em]">
                   Música • Producción • Creadora digital
                 </p>
-
-            {/* Símbolo infinito animado */}
-            <div className="-mt-6 lg:-mt-8 xl:-mt-6">
-              <div className="inline-flex flex-col items-center gap-1">
-                <div 
-                  className="text-5xl text-white/70 leading-none"
-                  style={{
-                    background: 'linear-gradient(90deg, #9340ff, #ffffff, #9340ff)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    animation: 'gradientMove 4s infinite linear'
-                  }}
-                >
-                  ∞
-                </div>
-                <div className="text-[0.65rem] tracking-[0.3em] text-gray-600 leading-tight">CREATIVIDAD SIN LÍMITES</div>
-              </div>
-            </div>
-
           </div>
-
         </div>
-
       </div>
-
-      {/* Línea vertical lateral decorativa */}
-      <div className="absolute left-8 top-1/4 bottom-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden xl:block" />
-      <div className="absolute right-8 top-1/4 bottom-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden xl:block" />
-
-      {/* Animación de gradiente infinito */}
-      <style jsx>{`
-        @keyframes gradientMove {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-      `}</style>
-
     </section>
   );
 };

@@ -35,6 +35,20 @@ export default function Navbar() {
         {/* Menú principal en pantallas grandes */}
         <ul className="md:flex space-x-4 font-logo text-2xl hidden md:block">
           <li>
+              <Link
+                href="/"
+                className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                onClick={(e) => {
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
+              >
+                Inicio
+              </Link>
+            </li>
+          <li>
             <a
               href="/#about"
               className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
@@ -61,51 +75,16 @@ export default function Navbar() {
               Blog
             </a>
           </li>
-         
-          {/* Barra desplegable de recursos */}
-          <li className="relative">
-            <button
-              className="relative flex items-center"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            >
-              Recursos {isDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </button>
-            <AnimatePresence>
-              {isDropdownOpen && (
-                <motion.ul
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute left-0 mt-2 w-48 bg-background shadow-lg rounded-md"
-                >
-                  <li className="hover:bg-gray-200 px-4 py-2 hover:bg-primary">
-                    <a href="/resources/ebooks" onClick={() => handleNavClick("ebooks")}>
-                      E-books
-                    </a>
-                  </li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </li>
-           <li>
-            <Link
-              href="/tienda"
-              className="relative after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            
-            >
-              Tienda
-            </Link>
-          </li>
-          <li>
-            <a
-              href="/#contacto"
-              className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full"
-              onClick={() => handleNavClick("contacto")}
-            >
-              Contacto
-            </a>
-          </li>
+          
+            <li>
+              <a
+                href="/#contacto"
+                className="border border-border px-4 py-2 text-sm uppercase tracking-wider transition-colors duration-300 hover:bg-foreground hover:text-background"
+                onClick={() => handleNavClick("contacto")}
+              >
+                Contacto
+              </a>
+            </li>
         </ul>
 
         {/* Menú desplegable en móviles con animación */}
@@ -118,6 +97,20 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="absolute top-16 left-0 w-full bg-background text-center space-y-4 py-4 font-logo text-xl md:hidden"
             >
+              <Link
+                  href="/"
+                  className="block py-2 hover:text-primary"
+                  onClick={(e) => {
+                    setIsOpen(false);
+
+                    if (window.location.pathname === "/") {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Inicio
+                </Link>
               <li>
                 <a
                   href="/#about"
@@ -145,54 +138,17 @@ export default function Navbar() {
                   Blog
                 </a>
               </li>
-              <li>
-                <a
-                  href="/#recursos"
-                  className="block py-2 hover:text-primary"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >
-                  Recursos
-                </a>
-              </li>
-                  <AnimatePresence>
-                {isDropdownOpen && (
-                  <motion.ul
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-background text-center space-y-2 py-2"
-                  >
-                    <li>
-                      <a
-                        href="/resources/ebooks"
-                        className="block py-2 hover:text-primary"
-                        onClick={() => handleNavClick("ebooks")}
-                      >
-                        E-books
-                      </a>
-                    </li>
-                  </motion.ul>
-                )}
-              </AnimatePresence>
-              <li>
-                  <Link
-                  href="/tienda"
-                  className="block py-2 hover:text-primary"
-                  onClick={() => setIsDropdownOpen(false)} // Cerrar el menú
-                    >
-                    Tienda
-                  </Link>
-              </li>
             
               <li>
-                <a
-                  href="/#contacto"
-                  className="relative py-2 px-4 bg-[#9340ff] text-white rounded-full transition duration-300 hover:bg-[#7a2cc7] hover:shadow-lg no-underline max-w-full block text-center md:inline-block"
-                  onClick={() => handleNavClick("contacto")}
-                >
-                  Contacto
-                </a>
+                <li>
+                  <a
+                    href="/#contacto"
+                    className="inline-block border border-border px-6 py-2 text-sm uppercase tracking-wider transition-colors duration-300 hover:bg-foreground hover:text-background"
+                    onClick={() => handleNavClick("contacto")}
+                  >
+                    Contacto
+                  </a>
+                </li>
               </li>
             </motion.ul>
           )}
